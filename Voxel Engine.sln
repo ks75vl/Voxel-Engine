@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel Engine", "Assembly-CSharp.csproj", "{03A386CB-489F-15D9-83CA-FB429564E8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel Engine", "Assembly-CSharp-Editor.csproj", "{832935D3-ACDB-5BA7-95BB-0704234F97EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03A386CB-489F-15D9-83CA-FB429564E8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A386CB-489F-15D9-83CA-FB429564E8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A386CB-489F-15D9-83CA-FB429564E8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A386CB-489F-15D9-83CA-FB429564E8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832935D3-ACDB-5BA7-95BB-0704234F97EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832935D3-ACDB-5BA7-95BB-0704234F97EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832935D3-ACDB-5BA7-95BB-0704234F97EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832935D3-ACDB-5BA7-95BB-0704234F97EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
