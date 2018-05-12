@@ -15,12 +15,7 @@ public class Chunk {
 	int chunkIndexY;
 	int chunkIndexZ;
 
-	int powChunkSize;
-
 	public GameObject chunkObject;
-	MeshRenderer meshRenderer;
-	MeshCollider meshCollider;
-	Mesh mesh;
 
 	Chunk[] chunkNeighbors;
 	int chunkNbMask;
@@ -29,8 +24,6 @@ public class Chunk {
 	bool needRender;
 	bool needUpdateMesh;
 	public bool isActive;
-
-	VoxelEngine transport;
 
 	public Chunk(int x, int y, int z) {
 
@@ -49,17 +42,27 @@ public class Chunk {
 		this.chunkObject.transform.parent = WorldLoader.Instance.WorldObject.transform;
 		this.chunkObject.transform.localPosition = ((new Vector3(this.chunkIndexX, this.chunkIndexY, this.chunkIndexZ)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
 
-		this.meshRenderer = chunkObject.AddComponent<MeshRenderer>();
-		this.meshRenderer.sharedMaterial = ChunkMetaData.Instance.material;
-		this.meshRenderer.enabled = true;
+		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
+		//this.meshRenderer.sharedMaterial = ChunkMetaData.Instance.material;
+		//this.meshRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
+		//this.meshRenderer.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
+		//this.meshRenderer.receiveShadows = false;
+		//this.meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+		//this.meshRenderer.enabled = true;
 
-		this.mesh = chunkObject.AddComponent<MeshFilter>().mesh;
-		this.mesh.Clear();
+		this.chunkObject.AddComponent<MeshFilter>().sharedMesh = new Mesh();
+		//tempMeshFilter.mesh = new Mesh();
+		//tempMeshFilter.sharedMesh = new Mesh();
+		//this.mesh = tempMeshFilter.sharedMesh;
+		
+		//this.mesh.Clear(false);
+
+		//this.mesh = this.chunkObject.AddComponent<MeshFilter>().mesh;
+		//this.mesh.Clear();
 
 		//this.meshCollider = chunkObject.AddComponent<MeshCollider> ();
+		//this.meshCollider.enabled = true;
 		//this.localOffset = -Vector3.one * (float)((ChunkMetaData.Instance.chunkSize - 1) * 0.5f * ChunkMetaData.Instance.blockSize);
-
-		this.powChunkSize = ChunkMetaData.Instance.chunkSize * ChunkMetaData.Instance.chunkSize;
 
 		this.chunkNeighbors = new Chunk[6];
 		this.chunkNbMask = 0;
@@ -68,8 +71,6 @@ public class Chunk {
 		this.needRender = false;
 		this.needUpdateMesh = false;
 		this.isActive = false;
-
-		this.transport = VoxelEngine.Instance;
 	}
 
 
@@ -99,7 +100,7 @@ public class Chunk {
 
 	public void Clear() {
 
-		this.mesh.Clear();
+		//this.mesh.Clear();
 	}
 
 	public void Render() {
@@ -110,15 +111,15 @@ public class Chunk {
 
 	public void CaculateMesh() {
 		
-		lock (this.vertices) {
-			lock (this.triangles) {
-				lock (this.uv0) {
-					this.triangles.Clear();
-					this.uv0.Clear();
-					this.vertices.Clear ();
-				}
-			}
-		}
+		//lock (this.vertices) {
+		//	lock (this.triangles) {
+		//		lock (this.uv0) {
+		//			this.triangles.Clear();
+		//			this.uv0.Clear();
+		//			this.vertices.Clear ();
+		//		}
+		//	}
+		//}
 
 		int blockType;
 		int flatIndex, temp;
@@ -244,16 +245,42 @@ public class Chunk {
 			lock (this.triangles) {
 				lock (this.uv0) {
 
-					this.mesh.triangles = null;
+					//this.mesh.triangles = null;
+					//this.mesh.Clear(false);
 
-					this.mesh.vertices = this.vertices.ToArray();
-					this.mesh.triangles = this.triangles.ToArray();
-					this.mesh.uv = this.uv0.ToArray();
+					//this.mesh.vertices = this.vertices.ToArray();
+					//this.mesh.triangles = this.triangles.ToArray();
+					//this.mesh.uv = this.uv0.ToArray();
 
-					this.mesh.RecalculateNormals();
-					this.mesh.RecalculateBounds();
+					//this.mesh.RecalculateNormals();
+					//this.mesh.RecalculateBounds();
 
 					//this.meshCollider.sharedMesh = mesh;
+					//this.mesh.MarkDynamic();
+					Mesh m = this.chunkObject.GetComponent<MeshFilter>().sharedMesh;
+
+					m.Clear();
+					
+					m.SetVertices(this.vertices);
+					m.SetTriangles(this.triangles, 0);
+					m.SetUVs(0, this.uv0);
+
+					m.RecalculateNormals();
+					m.RecalculateBounds();
+					//this.mesh.normals = null;
+					//this.mesh.tangents = null;
+
+					//this.mesh.UploadMeshData(true);
+
+					this.triangles.Clear();
+					this.uv0.Clear();
+					this.vertices.Clear();
+
+					this.vertices = new List<Vector3>();
+					this.triangles = new List<int>();
+					this.uv0 = new List<Vector2>();
+					//System.GC.Collect();
+					//System.Array.
 				}
 			}
 		}
@@ -294,9 +321,9 @@ public class Chunk {
 	void AddMeshProperites(int chunkIndex, int blockType, int index) {
 
 		Vector3 newPosition;
-		Vector3 position = this.transport.chunkLocalPosition[chunkIndex];
+		Vector3 position = VoxelEngine.Instance.chunkLocalPosition[chunkIndex];
 		float halfSize = ChunkMetaData.Instance.halfBlockSize;
-		int[] data = this.transport.trianglesIndex [index];
+		int[] data = VoxelEngine.Instance.trianglesIndex [index];
 
 
 		lock (this.vertices) {
@@ -356,9 +383,7 @@ public class Chunk {
 
 
 	public void CountVertices() {
-		if (this.mesh.vertices.Length != 0) {
-			Debug.Log("Chunk " + this.chunkIndexX.ToString() + " " + this.chunkIndexY.ToString() + " " + this.chunkIndexZ.ToString() + " :" + this.mesh.vertices.Length.ToString());
-		}
+		
 	}
 
 
@@ -387,41 +412,41 @@ public class Chunk {
 
 	public void Fill(bool render = true) {
 		
-		//float[,] test = Simplex.Noise.Calc2D (this.chunkIndexX * 16, this.chunkIndexZ * 16, 16, 16, 0.020f);
+		float[,] test = Simplex.Noise.Calc2D (this.chunkIndexX * 16, this.chunkIndexZ * 16, 16, 16, 0.020f);
 		short type;
 		int offset;
 
 
 
-		//for (int i = 0; i < 16; i++) {
-		//	for (int j = 0; j < 16; j++) {
-
-		//		offset = (int)((test [i, j] / 256.0f) * 16) + 250 * 16;
-
-		//		for (int k = 0; k < 16; k++) {
-					
-		//			if ((k + this.chunkIndexY * 16) < offset) {
-		//				type = 2;
-		//			} else {
-		//				type = 0;
-		//			}
-		//			this.chunkData [k * 256 + i * 16 + j] = type;
-		//		}
-		//	}
-		//}
-
-		type = 0;
-		if (this.chunkIndexY <= 248) {
-			type = 2;
-		}
-
 		for (int i = 0; i < 16; i++) {
 			for (int j = 0; j < 16; j++) {
+
+				offset = (int)((test[i, j] / 256.0f) * 16) + 250 * 16;
+
 				for (int k = 0; k < 16; k++) {
-					this.chunkData [i * 256 + j * 16 + k] = type;
+
+					if ((k + this.chunkIndexY * 16) < offset) {
+						type = 2;
+					} else {
+						type = 0;
+					}
+					this.chunkData[k * 256 + i * 16 + j] = type;
 				}
 			}
 		}
+
+		//type = 0;
+		//if (this.chunkIndexY <= 248) {
+		//	type = 2;
+		//}
+
+		//for (int i = 0; i < 16; i++) {
+		//	for (int j = 0; j < 16; j++) {
+		//		for (int k = 0; k < 16; k++) {
+		//			this.chunkData [i * 256 + j * 16 + k] = type;
+		//		}
+		//	}
+		//}
 	}
 
 
@@ -465,42 +490,5 @@ public class Chunk {
 
 
 #endregion
-
-
-
-
-
-
-
-
-#region Position converter
-	int CustomRound(float f) {
-
-		int end = ((int)(f * 10)) % 10;
-		if (Mathf.Abs(end) >= 5) {
-			return ((int)f + ((end >= 0) ? 1 : -1));
-		}
-
-		return (int)f;
-	}
-
-	//public Vector3 ConvertBlockPosToLocalPos(int x, int y, int z) {
-
-	//	Vector3 _offset = this.localOffset;
-	//	float _blockSize = ChunkMetaData.Instance.blockSize;
-
-	//	return new Vector3 (x * _blockSize + _offset.x, y * _blockSize + _offset.y, z * _blockSize + _offset.z);
-	//}
-
-	//public Vector3Int ConvertLocalPosToBlockPos(Vector3 localPosition) {
-
-	//	Vector3 _offset = this.localOffset;
-	//	float _blockSize = ChunkMetaData.Instance.blockSize;
-
-	//	return new Vector3Int ((int)((localPosition.x - _offset.x) / _blockSize), (int)((localPosition.y - _offset.y) / _blockSize), (int)((localPosition.z - _offset.z) / _blockSize));
-	//}
-#endregion
-
-
 
 }

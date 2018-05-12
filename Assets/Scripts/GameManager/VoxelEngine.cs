@@ -19,6 +19,8 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 
 	public Vector3Int worldOffset;
 
+	public int powChunkSize = ChunkMetaData.Instance.chunkSize * ChunkMetaData.Instance.chunkSize;
+
 	public int chunkOffset = (int)(ChunkMetaData.Instance.chunkSize * ChunkMetaData.Instance.blockSize);
 
 	public float localOffset = (ChunkMetaData.Instance.chunkSize - 1) * 0.5f;

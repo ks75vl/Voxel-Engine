@@ -444,7 +444,6 @@ public class WorldLoader : IWorldAccess {
 					this.chunkLoader.AddChunk(this.chunkStore[flatIndex]);
 				} else if (this.chunkStore[flatIndex].NeedRender) {
 					this.chunkStore[flatIndex].ApplyMesh();
-					Debug.Log("Liming");
 				}
 
 				this.chunkStore [flatIndex].SetActive (true);
