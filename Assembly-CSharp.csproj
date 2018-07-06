@@ -69,15 +69,14 @@
     <Compile Include="Assets\Scripts\Chunk\IChunkCore.cs" />
     <Compile Include="Assets\Scripts\Chunk\MetaData\ChunkMetaData.cs" />
     <Compile Include="Assets\Scripts\DisplaySelectBlock.cs" />
-    <Compile Include="Assets\Scripts\GameManager\Seed.cs" />
+    <Compile Include="Assets\Scripts\GameManager\Singleton.cs" />
     <Compile Include="Assets\Scripts\GameManager\VoxelEngine.cs" />
     <Compile Include="Assets\Scripts\Loader\ChunkLoader\ChunkLoader.cs" />
     <Compile Include="Assets\Scripts\Loader\TextureLoader\TextureLoader.cs" />
     <Compile Include="Assets\Scripts\Loader\WorldLoader\IWorldAccess.cs" />
     <Compile Include="Assets\Scripts\Loader\WorldLoader\WorldLoader.cs" />
     <Compile Include="Assets\Scripts\SimplexNoise\Noise.cs" />
-    <Compile Include="Assets\Scripts\SimplexNoise\Properties\AssemblyInfo.cs" />
-    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\SimplexNoise\NoiseSample.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\World.cs" />
     <Compile Include="Assets\Scripts\Z\Idemo.cs" />

@@ -6,14 +6,20 @@ public class World : MonoBehaviour {
 
 	public GameObject player;
 
+	[Header("World")]
 	public Vector3Int landSize;
 	public Vector3Int cacheShiftSize;
 	public Vector3Int viewDistance;
+
+	public string seed = "Default seed";
+	public int resolution = 3000;
 
 	public int freqUpdate = 500;
 
 	public ChunkMetaData chunkMetaData;
 
+	
+	
 
 	WorldLoader loader;
 
@@ -24,17 +30,10 @@ public class World : MonoBehaviour {
 	ChunkLoader chunkLoader;
 
 
-	public void ttt(int demo) {
-
-		demo--;
-	}
-
-	Vector3 test;
-
 	void Awake() {
 
 		ChunkMetaData.Instance = this.chunkMetaData;
-		VoxelEngine.Instance.Init(this.landSize);
+		VoxelEngine.Instance.Init(this.landSize, this.resolution);
 	}
 
 	void Start () {
@@ -48,43 +47,45 @@ public class World : MonoBehaviour {
 
 		this.playerPosition = new Vector3 (0, 0, 0);
 		this.loader = new WorldLoader (new Vector3 (0, 0, 0), this.landSize, this.cacheShiftSize, this.viewDistance);
-
-		Simplex.Noise.Seed = 123;
-		this.test = new Vector3(0, 0, 0);
 	}
-
 
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.T)) {
-			this.test.x += 3;
-			this.loader.UpdateViewDistance(this.test);
-		}
+		//if (Input.GetKeyDown(KeyCode.T)) {
+		//	this.test.x += 3;
+		//	this.loader.UpdateViewDistance(this.test);
+		//}
 
-		if (Input.GetKeyDown(KeyCode.Y)) {
-			this.test.x -= 3;
-			this.loader.UpdateViewDistance(this.test);
-		}
+		//if (Input.GetKeyDown(KeyCode.Y)) {
+		//	this.test.x -= 3;
+		//	this.loader.UpdateViewDistance(this.test);
+		//}
 
-		if (Input.GetKeyDown(KeyCode.U)) {
-			this.test.z += 3;
-			this.loader.UpdateViewDistance(this.test);
-		}
+		//if (Input.GetKeyDown(KeyCode.U)) {
+		//	this.test.z += 3;
+		//	this.loader.UpdateViewDistance(this.test);
+		//}
 
-		if (Input.GetKeyDown(KeyCode.J)) {
-			this.test.z -= 3;
-			this.loader.UpdateViewDistance(this.test);
-		}
+		//if (Input.GetKeyDown(KeyCode.J)) {
+		//	this.test.z -= 3;
+		//	this.loader.UpdateViewDistance(this.test);
+		//}
 
-		if (Input.GetKeyDown(KeyCode.P)) {
-			this.loader.Dbg();
-		}
+		//if (Input.GetKeyDown(KeyCode.S)) {
+		//	for (int i = 0; i < 5; i++) {
+		//		for (int j = 0; j < 5; j++) {
+		//			for (int k = 0; k < 5; k++) {
+		//				Debug.Log((i * 25 + j * 5 + k).ToString() + " " + (i * 36 + j * 6 + k).ToString() + " " + ((i * 25 + j * 5 + k) - (i * 36 + j * 6 + k)).ToString());
+		//			}
+		//		}
+		//	}
+		//}
 
 		if (this.playerPosition != this.player.transform.position) {	//Player moving
 			if ((Time.realtimeSinceStartup - this.saveTime) * 1000 >= this.freqUpdate) {
 				this.playerPosition = this.player.transform.position;
 				this.loader.UpdateViewDistance (this.playerPosition);
-				Debug.Log("3Liming");
+				//.Log("3Liming");
 				this.saveTime = Time.realtimeSinceStartup;
 			}
 		}

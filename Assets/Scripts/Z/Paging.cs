@@ -5,50 +5,65 @@ using System.Threading;
 
 public class Paging : MonoBehaviour {
 
-	public int count;
+	class demo {
+		int[] a;
 
-	MeshRenderer meshRenderer;
-	MeshFilter meshFilter;
+		public demo() {
+			this.a = new int[100000];
 
-	List<Vector3> vertices;
-	List<int> triangles;
+			for (int i = 0; i < 100000; i++) {
+				this.a[i] = i;
+			}
+		}
+
+		public void change() {
+
+			this.a[100] = 200;
+		}
+
+		public int get() {
+
+			return this.a[100];
+		}
+	}
+
+	demo[] test;
+	demo[] lone;
+	List<demo> list;
+
+	void dbg(demo d, int i) {
+		lone[i] = d;
+	}
 
 	void Start() {
 
-		this.meshFilter = this.gameObject.AddComponent<MeshFilter>();
-		this.meshRenderer = this.gameObject.AddComponent<MeshRenderer>();
+		test = new demo[10];
+		for (int i = 0; i < 10; i++) {
+			test[i] = new demo();
+		}
 
-		this.vertices = new List<Vector3>();
-		this.triangles = new List<int>();
+		//lone = new demo[10];
+		//for (int i = 0; i < 10; i++) {
+		//	dbg(test[i], i);
+		//}
 
-		this.meshFilter.mesh = new Mesh();
-		this.meshFilter.sharedMesh.SetVertices(this.vertices);
-		this.meshFilter.sharedMesh.SetTriangles(this.triangles, 0);
-		//this.meshFilter.sharedMesh.SetUVs(this.uv)
+		//Debug.Log(test[1].get());
+		//lone[1].change();
+		//Debug.Log(test[1].get());
 
-		this.vertices.Add(new Vector3(0, 0, 0));
-		this.vertices.Add(new Vector3(1, 0, 0));
-		this.vertices.Add(new Vector3(0, 1, 0));
-		this.vertices.Add(new Vector3(1, 1, 0));
+		list = new List<demo>();
+		for (int i = 0; i < 10; i++) {
+			list.Add(test[i]);
+		}
 
-		this.triangles.Add(1);
-		this.triangles.Add(0);
-		this.triangles.Add(2);
-		this.triangles.Add(1);
-		this.triangles.Add(2);
-		this.triangles.Add(3);
-
-		//this.meshFilter.sharedMesh.RecalculateNormals();
-		//this.meshFilter.sharedMesh.RecalculateBounds();
-		//this.meshFilter.sharedMesh.UploadMeshData(false);
+		Debug.Log(test[1].get());
+		list[1].change();
+		Debug.Log(test[1].get());
 	}
 
 	void Update() {
 		
-		if (Input.GetKeyDown(KeyCode.T) || true) {
-			this.meshFilter.sharedMesh.SetVertices(this.vertices);
-			this.meshFilter.sharedMesh.SetTriangles(this.triangles, 0);
-		}
+		
 
 	}
 	

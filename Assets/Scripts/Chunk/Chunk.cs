@@ -16,6 +16,7 @@ public class Chunk {
 	int chunkIndexZ;
 
 	public GameObject chunkObject;
+	Transform transformObject;
 
 	Chunk[] chunkNeighbors;
 	int chunkNbMask;
@@ -41,6 +42,7 @@ public class Chunk {
 		this.chunkObject.SetActive(false);
 		this.chunkObject.transform.parent = WorldLoader.Instance.WorldObject.transform;
 		this.chunkObject.transform.localPosition = ((new Vector3(this.chunkIndexX, this.chunkIndexY, this.chunkIndexZ)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
+		this.transformObject = this.chunkObject.transform;
 
 		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
 		//this.meshRenderer.sharedMaterial = ChunkMetaData.Instance.material;
@@ -87,39 +89,31 @@ public class Chunk {
 		}
 	}
 
-	public bool NeedUpdateMesh {
-		get {
-			return this.needUpdateMesh;
-		}
-		set {
-			this.needUpdateMesh = value;
-		}
-	}
-
 	#region Render method
 
-	public void Clear() {
 
-		//this.mesh.Clear();
-	}
-
+	//<document>
+	//	<Params>		Void
+	//	<Return>		Void
+	//	<Description>	Calulalte and apply mesh to chunk
+	//	<Note>			Split to 2 method because ApplyMesh() must be called from main thread
+	//</document>
 	public void Render() {
 
 		this.CaculateMesh ();
 		this.ApplyMesh ();
 	}
 
+
+	//<document>
+	//	<Description>	Detect side of block, which visible to render 
+	//	<Note>
+	//</document>
 	public void CaculateMesh() {
-		
-		//lock (this.vertices) {
-		//	lock (this.triangles) {
-		//		lock (this.uv0) {
-		//			this.triangles.Clear();
-		//			this.uv0.Clear();
-		//			this.vertices.Clear ();
-		//		}
-		//	}
-		//}
+
+		if (!this.needUpdateMesh) {
+			return;
+		}
 
 		int blockType;
 		int flatIndex, temp;
@@ -137,17 +131,17 @@ public class Chunk {
 						continue;
 					}
 
-					temp = flatIndex;
+					temp = flatIndex + 33 * i + j;	//Convert 16*16*16 matrix to 17*17*17 matrix
 
 					//Forward
 					flatIndex += 1;
 					if (k == 15) {
-						if (this.chunkNeighbors [0] != null && this.chunkNeighbors[0].loaded) {
+						if (this.chunkNeighbors [0] != null && this.chunkNeighbors[0].isActive) {
 							if (this.chunkNeighbors [0].chunkData [flatIndex - 16] == 0) {
 								this.AddMeshProperites (temp, blockType, 0);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 0);
+							//this.AddMeshProperites (temp, blockType, 0);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 0);
@@ -157,12 +151,12 @@ public class Chunk {
 					//Back
 					flatIndex -= 2;
 					if (k == 0) {
-						if (this.chunkNeighbors[1] != null && this.chunkNeighbors[1].loaded) {
+						if (this.chunkNeighbors[1] != null && this.chunkNeighbors[1].isActive) {
 							if (this.chunkNeighbors [1].chunkData [flatIndex + 16] == 0) {
 								this.AddMeshProperites (temp, blockType, 1);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 1);
+							//this.AddMeshProperites (temp, blockType, 1);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 1);
@@ -172,12 +166,12 @@ public class Chunk {
 					//Right
 					flatIndex += 17;
 					if (j == 15) {
-						if (this.chunkNeighbors [5] != null && this.chunkNeighbors[5].loaded) {
+						if (this.chunkNeighbors [5] != null && this.chunkNeighbors[5].isActive) {
 							if (this.chunkNeighbors [5].chunkData [flatIndex - 256] == 0) {
 								this.AddMeshProperites (temp, blockType, 5);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 5);
+							//this.AddMeshProperites (temp, blockType, 5);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 5);
@@ -187,12 +181,12 @@ public class Chunk {
 					//Left
 					flatIndex -= 32;
 					if (j == 0) {
-						if (this.chunkNeighbors [4] != null && this.chunkNeighbors[4].loaded) {
+						if (this.chunkNeighbors [4] != null && this.chunkNeighbors[4].isActive) {
 							if (this.chunkNeighbors [4].chunkData [flatIndex + 256] == 0) {
 								this.AddMeshProperites (temp, blockType, 4);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 4);
+							//this.AddMeshProperites (temp, blockType, 4);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 4);
@@ -202,12 +196,12 @@ public class Chunk {
 					//Down
 					flatIndex -= 240;
 					if (i == 0) {
-						if (this.chunkNeighbors [3] != null && this.chunkNeighbors[3].loaded) {
+						if (this.chunkNeighbors [3] != null && this.chunkNeighbors[3].isActive) {
 							if (this.chunkNeighbors [3].chunkData [flatIndex + 4096] == 0) {
 								this.AddMeshProperites (temp, blockType, 3);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 3);
+							//this.AddMeshProperites (temp, blockType, 3);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 3);
@@ -217,12 +211,12 @@ public class Chunk {
 					//Top
 					flatIndex += 512;
 					if (i == 15) {
-						if (this.chunkNeighbors [2] != null && this.chunkNeighbors[2].loaded) {
+						if (this.chunkNeighbors [2] != null && this.chunkNeighbors[2].isActive) {
 							if (this.chunkNeighbors [2].chunkData [flatIndex - 4096] == 0) {
 								this.AddMeshProperites (temp, blockType, 2);
 							}
 						} else {
-							this.AddMeshProperites (temp, blockType, 2);
+							//this.AddMeshProperites (temp, blockType, 2);
 						}
 					} else if ((this.chunkData [flatIndex]) == 0) {
 						this.AddMeshProperites (temp, blockType, 2);
@@ -233,8 +227,15 @@ public class Chunk {
 
 		this.needRender = true;
 		this.loaded = true;
+		this.needUpdateMesh = false;
 	}
 
+
+	//<document>
+	//	<Description>	Apply vertices, triangles, uv to mesh component of this chunk
+	//	<Note>			lock() is require because of deadblock with child thread
+	//					Clear mesh data after apply to chunk (vertices, triangles, uv)
+	//</document>
 	public void ApplyMesh() {
 
 		if (!this.needRender) {
@@ -245,42 +246,21 @@ public class Chunk {
 			lock (this.triangles) {
 				lock (this.uv0) {
 
-					//this.mesh.triangles = null;
-					//this.mesh.Clear(false);
-
-					//this.mesh.vertices = this.vertices.ToArray();
-					//this.mesh.triangles = this.triangles.ToArray();
-					//this.mesh.uv = this.uv0.ToArray();
-
-					//this.mesh.RecalculateNormals();
-					//this.mesh.RecalculateBounds();
-
-					//this.meshCollider.sharedMesh = mesh;
-					//this.mesh.MarkDynamic();
 					Mesh m = this.chunkObject.GetComponent<MeshFilter>().sharedMesh;
-
 					m.Clear();
 					
 					m.SetVertices(this.vertices);
 					m.SetTriangles(this.triangles, 0);
 					m.SetUVs(0, this.uv0);
 
+					//Debug.Log(m.colors32.Length);
+
 					m.RecalculateNormals();
 					m.RecalculateBounds();
-					//this.mesh.normals = null;
-					//this.mesh.tangents = null;
-
-					//this.mesh.UploadMeshData(true);
 
 					this.triangles.Clear();
 					this.uv0.Clear();
 					this.vertices.Clear();
-
-					this.vertices = new List<Vector3>();
-					this.triangles = new List<int>();
-					this.uv0 = new List<Vector2>();
-					//System.GC.Collect();
-					//System.Array.
 				}
 			}
 		}
@@ -288,12 +268,14 @@ public class Chunk {
 		this.needRender = false;
 	}
 
+
+
+
 	public void CaculateNeighborsMesh() {
 
 		for (int i = 0; i < 6; i++) {
 			if (this.chunkNeighbors[i] != null && this.chunkNeighbors[i].isActive && this.chunkNeighbors[i].needUpdateMesh) {
 				this.chunkNeighbors[i].CaculateMesh();
-				this.chunkNeighbors[i].needUpdateMesh = false;
 				this.chunkNeighbors[i].chunkNbMask |= (1 << i);
 			}
 		}
@@ -309,6 +291,11 @@ public class Chunk {
 		}
 	}
 
+
+	//<document>
+	//	<Description>	Mark neighbor chunk need update mesh when this chunk was spawned
+	//	<Note>
+	//</document>
 	public void SetLoadedEvent() {
 
 		for (int i = 0; i < 6; i++) {
@@ -317,14 +304,11 @@ public class Chunk {
 	}
 
 
-
+	//<document>
+	//	<Description>	Calculate mesh data: vertices, triangles, uv
+	//	<Note>			This chunk was filled
+	//</document>
 	void AddMeshProperites(int chunkIndex, int blockType, int index) {
-
-		Vector3 newPosition;
-		Vector3 position = VoxelEngine.Instance.chunkLocalPosition[chunkIndex];
-		float halfSize = ChunkMetaData.Instance.halfBlockSize;
-		int[] data = VoxelEngine.Instance.trianglesIndex [index];
-
 
 		lock (this.vertices) {
 			lock (this.triangles) {
@@ -334,51 +318,30 @@ public class Chunk {
 
 					//Add vertices
 					for (int i = 0; i < 4; i++) {
-						newPosition = position;
-
-						if ((data [i] & 4) == 4) {
-							newPosition.y += halfSize;
-						} else {
-							newPosition.y -= halfSize;
-						}
-
-						if ((data [i] & 2) == 2) {
-							newPosition.x += halfSize;
-						} else {
-							newPosition.x -= halfSize;
-						}
-
-						if ((data [i] & 1) == 1) {
-							newPosition.z += halfSize;
-						} else {
-							newPosition.z -= halfSize;
-						}
-
-						this.vertices.Add (newPosition);
+						this.vertices.Add(VoxelEngine.Instance.chunkLocalPosition[chunkIndex + VoxelEngine.Instance.trianglesIndex1[index][i]]);
 					}
 
-
 					//Add triangles
-					this.triangles.Add (count + 1);
-					this.triangles.Add (count);
-					this.triangles.Add (count + 2);
-					this.triangles.Add (count + 1);
-					this.triangles.Add (count + 2);
-					this.triangles.Add (count + 3);
+					this.triangles.Add(count + 1);
+					this.triangles.Add(count);
+					this.triangles.Add(count + 2);
+					this.triangles.Add(count + 1);
+					this.triangles.Add(count + 2);
+					this.triangles.Add(count + 3);
 
 					//Add uv
 					TextureRect _temp = ChunkMetaData.Instance.textureLoader.GetBlockTexture(blockType - 1, index);
-					this.uv0.Add (_temp.bottomLeft);
-					this.uv0.Add (_temp.bottomRight);
-					this.uv0.Add (_temp.topLeft);
-					this.uv0.Add (_temp.topRight);
+					this.uv0.Add(_temp.bottomLeft);
+					this.uv0.Add(_temp.bottomRight);
+					this.uv0.Add(_temp.topLeft);
+					this.uv0.Add(_temp.topRight);
 				}
 			}
 		}
 
 	}
 
-	#endregion
+#endregion
 
 
 
@@ -398,7 +361,6 @@ public class Chunk {
 		this.isActive = state;
 	}
 
-
 	public void SetPosition(int x, int y, int z) {
 
 		this.chunkIndexX = x;
@@ -410,21 +372,29 @@ public class Chunk {
 
 
 
+	//<document>
+	//	<Params>		Not use
+	//	<Return>		Void
+	//	<Description>	Fill all blocks in chunk using Simplex Noise
+	//	<Note>			Only called from child thread, cause lagging if using from main thread
+	//</document>
 	public void Fill(bool render = true) {
-		
-		float[,] test = Simplex.Noise.Calc2D (this.chunkIndexX * 16, this.chunkIndexZ * 16, 16, 16, 0.020f);
+
 		short type;
 		int offset;
-
-
+		float temp;
+		float step = 1 / (float)VoxelEngine.Instance.worldResolution;
+		Vector3 point = new Vector3(this.chunkIndexX * 16 * step, this.chunkIndexZ * 16 * step, 0);
 
 		for (int i = 0; i < 16; i++) {
+			point.x += step;
 			for (int j = 0; j < 16; j++) {
-
-				offset = (int)((test[i, j] / 256.0f) * 16) + 250 * 16;
-
+				point.y += step;
+				
+				temp = Noise.Sum(point, 5f, 6, 2f, 0.5f).value + 0.6f;
+				offset = (int)(temp * 128 + 250 * 16);
+				
 				for (int k = 0; k < 16; k++) {
-
 					if ((k + this.chunkIndexY * 16) < offset) {
 						type = 2;
 					} else {
@@ -433,8 +403,10 @@ public class Chunk {
 					this.chunkData[k * 256 + i * 16 + j] = type;
 				}
 			}
+			point.y -= (step * 16);
 		}
 
+		//Debug: Flat terrain
 		//type = 0;
 		//if (this.chunkIndexY <= 248) {
 		//	type = 2;
@@ -448,6 +420,8 @@ public class Chunk {
 		//	}
 		//}
 	}
+
+
 
 
 	public void SetBlock(Vector3Int blockPosition, int type, bool autoUpdate = true) {
@@ -481,7 +455,6 @@ public class Chunk {
 
 		this.chunkData [x * 256 + y * 16 + z] = 0;
 	}
-
 
 	public void SetNeighbor(Chunk chunk, int relationship) {
 

@@ -10,7 +10,6 @@ public class ChunkLoader : MonoBehaviour {
 	AutoResetEvent resetEvent;
 
 	Queue<Chunk> data;
-	Queue<Chunk> temp;
 	Queue<Chunk> output;
 	Chunk chunkRender;
 	long idMark;
@@ -21,7 +20,6 @@ public class ChunkLoader : MonoBehaviour {
 	void Awake () {
 
 		this.data = new Queue<Chunk>(65536);
-		this.temp = new Queue<Chunk>(65536);
 		this.output = new Queue<Chunk>(65536);
 
 		this.idMark = 0;
@@ -54,13 +52,12 @@ public class ChunkLoader : MonoBehaviour {
 
 	void ThreadWorker() {
 
+		Queue<Chunk> temp = new Queue<Chunk> (65536);
 		Chunk chunkInit = null;
 		
 
 		while (!this.isStopped) {
-			//this.resetEvent.WaitOne();
-			Stopwatch sw = Stopwatch.StartNew();
-			sw.Start();
+
 			lock (this.data) {
 				if (this.data.Count != 0) {	//Get chunk from queue
 					chunkInit = this.data.Dequeue();
@@ -69,19 +66,16 @@ public class ChunkLoader : MonoBehaviour {
 				}
 			}
 
-			if (chunkInit == null) {    //Sleep if queue empty
+			if (chunkInit == null) {	//Start update mesh if queue empty - it mean all chunk filled with block
 
 				while (true) {
 
-					if (this.temp.Count == 0) {
+					if (temp.Count == 0) {
 						break;
 					}
 
-					chunkInit = this.temp.Dequeue();
-					if (chunkInit.NeedUpdateMesh) {
-						chunkInit.CaculateMesh();
-						chunkInit.NeedUpdateMesh = false;
-					}
+					chunkInit = temp.Dequeue();
+					chunkInit.CaculateMesh();
 					chunkInit.CaculateNeighborsMesh();
 
 					lock (this.output) {
@@ -95,20 +89,12 @@ public class ChunkLoader : MonoBehaviour {
 				continue;
 			}
 
-			//Load chunk
-			
+			//Fill chunk with block
 			chunkInit.Fill ();
 			chunkInit.SetLoadedEvent();
-			//chunkInit.CaculateNeighborsMesh ();
 
-
-			//Push chunk loaded to main thread for render
-			this.temp.Enqueue(chunkInit);
-			sw.Stop();
-
-			if (sw.ElapsedMilliseconds > 50) {
-				UnityEngine.Debug.Log(sw.ElapsedMilliseconds.ToString());
-			}
+			//Push chunk filled for update mesh
+			temp.Enqueue(chunkInit);
 		}
 	}
 

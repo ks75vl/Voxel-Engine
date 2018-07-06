@@ -192,13 +192,6 @@ public class WorldLoader : IWorldAccess {
 
 	}
 
-	public void Dbg() {
-
-		for (int i = 0; i < this.chunkStore.Length; i++) {
-			this.chunkStore[i].Clear();
-		}
-	}
-
 	public GameObject WorldObject {
 
 		get {
