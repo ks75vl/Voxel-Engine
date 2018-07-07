@@ -16,7 +16,7 @@ public class Chunk {
 	int chunkIndexZ;
 
 	public GameObject chunkObject;
-	Transform transformObject;
+	MeshCollider meshCollider;
 
 	Chunk[] chunkNeighbors;
 	int chunkNbMask;
@@ -42,7 +42,7 @@ public class Chunk {
 		this.chunkObject.SetActive(false);
 		this.chunkObject.transform.parent = WorldLoader.Instance.WorldObject.transform;
 		this.chunkObject.transform.localPosition = ((new Vector3(this.chunkIndexX, this.chunkIndexY, this.chunkIndexZ)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
-		this.transformObject = this.chunkObject.transform;
+		
 
 		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
 		//this.meshRenderer.sharedMaterial = ChunkMetaData.Instance.material;
@@ -62,8 +62,8 @@ public class Chunk {
 		//this.mesh = this.chunkObject.AddComponent<MeshFilter>().mesh;
 		//this.mesh.Clear();
 
-		//this.meshCollider = chunkObject.AddComponent<MeshCollider> ();
-		//this.meshCollider.enabled = true;
+		this.meshCollider = this.chunkObject.AddComponent<MeshCollider> ();
+		this.meshCollider.enabled = true;
 		//this.localOffset = -Vector3.one * (float)((ChunkMetaData.Instance.chunkSize - 1) * 0.5f * ChunkMetaData.Instance.blockSize);
 
 		this.chunkNeighbors = new Chunk[6];
@@ -253,10 +253,11 @@ public class Chunk {
 					m.SetTriangles(this.triangles, 0);
 					m.SetUVs(0, this.uv0);
 
-					//Debug.Log(m.colors32.Length);
-
 					m.RecalculateNormals();
-					m.RecalculateBounds();
+					//m.RecalculateBounds();
+
+					this.meshCollider.sharedMesh = null;
+					this.meshCollider.sharedMesh = m;
 
 					this.triangles.Clear();
 					this.uv0.Clear();

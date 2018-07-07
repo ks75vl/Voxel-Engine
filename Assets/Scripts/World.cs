@@ -11,7 +11,7 @@ public class World : MonoBehaviour {
 	public Vector3Int cacheShiftSize;
 	public Vector3Int viewDistance;
 
-	public string seed = "Default seed";
+	public int seed = 1234;
 	public int resolution = 3000;
 
 	public int freqUpdate = 500;
@@ -47,6 +47,8 @@ public class World : MonoBehaviour {
 
 		this.playerPosition = new Vector3 (0, 0, 0);
 		this.loader = new WorldLoader (new Vector3 (0, 0, 0), this.landSize, this.cacheShiftSize, this.viewDistance);
+
+		Noise.Seed(seed);
 	}
 
 	void Update () {

@@ -176,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &213149609
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -341,8 +341,8 @@ MonoBehaviour:
   player: {fileID: 1967715848}
   landSize: {x: 500, y: 500, z: 500}
   cacheShiftSize: {x: 5, y: 5, z: 5}
-  viewDistance: {x: 10, y: 5, z: 10}
-  seed: Default seed
+  viewDistance: {x: 5, y: 5, z: 5}
+  seed: 1234
   resolution: 3000
   freqUpdate: 500
   chunkMetaData:

@@ -7,7 +7,7 @@ public class WorldLoader : IWorldAccess {
 
 	public static IWorldAccess Instance;
 
-	GameObject worldObject;
+	GameObject worldObject = null;
 	ChunkLoader chunkLoader;
 
 	Chunk[] chunkStore;
@@ -15,8 +15,6 @@ public class WorldLoader : IWorldAccess {
 	ulong[] nonce;
 
 	ulong workingNonce;
-
-	float blockSize = 0.25f;
 
 	int newPositionX;
 	int newPositionY;
