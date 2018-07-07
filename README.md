@@ -1,2 +1,2 @@
 # Voxel-Engine
-A engine for voxel game like Minecraft
+An engine for voxel game like Minecraft
