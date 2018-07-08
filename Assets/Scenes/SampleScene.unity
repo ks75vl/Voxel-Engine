@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1385,7 +1385,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 370421700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.987, y: 1.881, z: -25.076}
+  m_LocalPosition: {x: -24.987, y: 7.121, z: -25.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1938077038}
@@ -5151,7 +5151,7 @@ Prefab:
     - target: {fileID: 224401001760375198, guid: 4d11f04ffa458c94d8a0eedbda4f9f11,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 2.114
+      value: 7.38
       objectReference: {fileID: 0}
     - target: {fileID: 224401001760375198, guid: 4d11f04ffa458c94d8a0eedbda4f9f11,
         type: 2}
@@ -5303,6 +5303,8 @@ MonoBehaviour:
   landSize: {x: 500, y: 500, z: 500}
   cacheShiftSize: {x: 5, y: 5, z: 5}
   viewDistance: {x: 10, y: 5, z: 10}
+  seed: 1234
+  resolution: 3000
   freqUpdate: 500
   chunkMetaData:
     chunkSize: 16
@@ -5962,7 +5964,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1978093171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3000001, z: 0}
+  m_LocalPosition: {x: 0, y: 6.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6619,7 +6621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dc4ca921f7a654aac669d7cb1530dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 500000
 --- !u!4 &2065304023
 Transform:
   m_ObjectHideFlags: 0

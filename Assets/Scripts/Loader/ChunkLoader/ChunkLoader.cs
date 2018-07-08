@@ -84,7 +84,7 @@ public class ChunkLoader : MonoBehaviour {
 				}
 
 				this.needLoad = false;
-				UnityEngine.Debug.Log("Finish");
+				//UnityEngine.Debug.Log("Finish");
 				this.resetEvent.WaitOne();
 				continue;
 			}
