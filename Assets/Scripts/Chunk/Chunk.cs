@@ -21,12 +21,34 @@ public class Chunk {
 	Chunk[] chunkNeighbors;
 	int chunkNbMask;
 
-	bool loaded;
-	bool needRender;
-	bool needUpdateMesh;
-	public bool isActive;
+	bool loaded = false;
+	bool needRender = false;
+	bool needUpdateMesh = false;
+	bool needUpdateTransform = false;
+	bool componentReady = false;
+	bool isActive = false;
+
 
 	public Chunk(int x, int y, int z) {
+
+		this.chunkIndexX = x;
+		this.chunkIndexY = y;
+		this.chunkIndexZ = z;
+		this.needUpdateTransform = true;
+
+		this.chunkNeighbors = new Chunk[6];
+		this.chunkNbMask = 0;
+
+		//this.loaded = true;
+		//this.needRender = false;
+		//this.needUpdateMesh = false;
+		//this.needUpdateTransform = false;
+		//this.isActive = false;
+
+		//this.componentReady = false;
+	}
+
+	void AddComponent() {
 
 		this.chunkData = new short[4096];
 
@@ -34,47 +56,20 @@ public class Chunk {
 		this.triangles = new List<int> ();
 		this.uv0 = new List<Vector2> ();
 
-		this.chunkIndexX = x;
-		this.chunkIndexY = y;
-		this.chunkIndexZ = z;
-
 		this.chunkObject = new GameObject();
+
 		this.chunkObject.SetActive(false);
 		this.chunkObject.transform.parent = WorldLoader.Instance.WorldObject.transform;
 		this.chunkObject.transform.localPosition = ((new Vector3(this.chunkIndexX, this.chunkIndexY, this.chunkIndexZ)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
 		
-
 		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
-		//this.meshRenderer.sharedMaterial = ChunkMetaData.Instance.material;
-		//this.meshRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
-		//this.meshRenderer.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
-		//this.meshRenderer.receiveShadows = false;
-		//this.meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-		//this.meshRenderer.enabled = true;
-
 		this.chunkObject.AddComponent<MeshFilter>().sharedMesh = new Mesh();
-		//tempMeshFilter.mesh = new Mesh();
-		//tempMeshFilter.sharedMesh = new Mesh();
-		//this.mesh = tempMeshFilter.sharedMesh;
-		
-		//this.mesh.Clear(false);
-
-		//this.mesh = this.chunkObject.AddComponent<MeshFilter>().mesh;
-		//this.mesh.Clear();
 
 		this.meshCollider = this.chunkObject.AddComponent<MeshCollider> ();
 		this.meshCollider.enabled = true;
-		//this.localOffset = -Vector3.one * (float)((ChunkMetaData.Instance.chunkSize - 1) * 0.5f * ChunkMetaData.Instance.blockSize);
-
-		this.chunkNeighbors = new Chunk[6];
-		this.chunkNbMask = 0;
-
-		this.loaded = true;
-		this.needRender = false;
-		this.needUpdateMesh = false;
-		this.isActive = false;
+		
+		this.componentReady = true;
 	}
-
 
 
 	public bool Loaded {
@@ -242,6 +237,15 @@ public class Chunk {
 			return;
 		}
 
+		if (this.needUpdateTransform) {
+			this.chunkObject.transform.localPosition = ((new Vector3(this.chunkIndexX, this.chunkIndexY, this.chunkIndexZ)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
+			this.needUpdateTransform = false;
+		}
+
+		if (!this.componentReady) {
+			this.AddComponent();
+		}
+
 		lock (this.vertices) {
 			lock (this.triangles) {
 				lock (this.uv0) {
@@ -355,6 +359,11 @@ public class Chunk {
 
 	public void SetActive(bool state) {
 
+
+		if (!this.componentReady) {
+			this.AddComponent();
+		}
+
 		this.chunkObject.SetActive(state);
 		//this.meshRenderer.enabled = state;
 		//this.meshCollider.enabled = state;
@@ -368,7 +377,7 @@ public class Chunk {
 		this.chunkIndexY = y;
 		this.chunkIndexZ = z;
 
-		this.chunkObject.transform.localPosition = ((new Vector3 (x, y, z)) - VoxelEngine.Instance.worldOffset) * VoxelEngine.Instance.chunkOffset;
+		this.needUpdateTransform = true;
 	}
 
 
@@ -380,7 +389,7 @@ public class Chunk {
 	//	<Note>			Only called from child thread, cause lagging if using from main thread
 	//</document>
 	public void Fill(bool render = true) {
-
+		
 		short type;
 		int offset;
 		float temp;

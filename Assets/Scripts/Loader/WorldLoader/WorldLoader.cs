@@ -74,7 +74,7 @@ public class WorldLoader : IWorldAccess {
 		this.worldObject.transform.position = worldPosition;
 
 		this.chunkLoader = this.worldObject.AddComponent<ChunkLoader> ();
-		Debug.Log (VoxelEngine.Instance.worldOffset);
+
 		this.worldPosition = worldPosition;
 
 		this.worldOffsetX = worldPosition.x - worldSize.x * ChunkMetaData.Instance.blockSize * ChunkMetaData.Instance.chunkSize * 0.5f;
@@ -234,7 +234,7 @@ public class WorldLoader : IWorldAccess {
         //Debug.Log("Offset " + this.worldOffsetX.ToString());
 		//Debug.Log ("Debbug 1: " + newChunkX.ToString () + " " + newChunkY.ToString () + " " + newChunkZ.ToString ());
 
-		//Avoid if chunk index out of world range
+		//Avoid update if chunk index out of world range
 		if (newChunkX < this.viewX || newChunkX >= (this.worldSizeLimitX - this.viewX)) {
 			return;
 		}
@@ -299,7 +299,8 @@ public class WorldLoader : IWorldAccess {
 		//Debug.Log ("================");
 
 
-		this.workingNonce++;    //Change nonce
+		//Change nonce
+		this.workingNonce++;
 
 		//this.chunkLoader.InitLoader();
 		this.CalculateViewDistance (newChunkX + deltaX, newChunkY + deltaY, newChunkZ + deltaZ);
@@ -422,28 +423,32 @@ public class WorldLoader : IWorldAccess {
 			tile <<= 20;
 			tile |= ckz;
 
-
+			
 			if (inNewRadius) {
-				
-				if (this.tiles [flatIndex] != tile) {
 
-					this.chunkStore [flatIndex].SetPosition (x, y, z);
-					this.tiles [flatIndex] = tile;
+				if (this.tiles[flatIndex] != tile) {
+
+					this.chunkStore[flatIndex].SetPosition(x, y, z);
+					this.tiles[flatIndex] = tile;
 					this.chunkLoader.AddChunk(this.chunkStore[flatIndex]);
 
 				} else if (!this.chunkStore[flatIndex].Loaded) {
+					//Debug.Log("123");
 					this.chunkLoader.AddChunk(this.chunkStore[flatIndex]);
 				} else if (this.chunkStore[flatIndex].NeedRender) {
+					Debug.Log("Never reach");
 					this.chunkStore[flatIndex].ApplyMesh();
 				}
 
-				this.chunkStore [flatIndex].SetActive (true);
+				this.chunkStore[flatIndex].SetActive(true);
 
 			} else {
 
-				if (this.tiles [flatIndex] == tile) {
-					this.chunkStore [flatIndex].SetActive (false);
-					//Debug.Log ("Hide");
+				if (this.tiles[flatIndex] == tile) {
+					if (this.chunkStore[flatIndex] != null) {
+						this.chunkStore[flatIndex].SetActive(false);
+						//Debug.Log ("Hide");
+					}
 				}
 			}
 
