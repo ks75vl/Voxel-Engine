@@ -129,11 +129,15 @@ public class ChunkLoader : MonoBehaviour {
 
 		this.thread.Abort();
 		this.isStopped = true;
+
+		//VoxelEngine.Instance.binaryReader.Close();
 	}
 
 	void OnApplicationQuit () {
 
 		this.thread.Abort();
 		this.isStopped = true;
+
+		//VoxelEngine.Instance.binaryReader.Close();
 	}
 }

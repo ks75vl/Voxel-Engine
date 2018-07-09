@@ -436,8 +436,8 @@ public class WorldLoader : IWorldAccess {
 					//Debug.Log("123");
 					this.chunkLoader.AddChunk(this.chunkStore[flatIndex]);
 				} else if (this.chunkStore[flatIndex].NeedRender) {
-					Debug.Log("Never reach");
-					this.chunkStore[flatIndex].ApplyMesh();
+					Debug.Log("Overlap");
+					//this.chunkStore[flatIndex].ApplyMesh();
 				}
 
 				this.chunkStore[flatIndex].SetActive(true);

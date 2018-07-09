@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class World : MonoBehaviour {
 
 	public GameObject player;
+	public GameObject plane;
+
+	public bool isCollide = true;
 
 	[Header("World")]
 	public Vector3Int landSize;
@@ -33,7 +37,7 @@ public class World : MonoBehaviour {
 	void Awake() {
 
 		ChunkMetaData.Instance = this.chunkMetaData;
-		VoxelEngine.Instance.Init(this.landSize, this.resolution);
+		VoxelEngine.Instance.Init(this.landSize, this.resolution, this.isCollide);
 	}
 
 	void Start () {
@@ -43,45 +47,28 @@ public class World : MonoBehaviour {
 		this.chunkMetaData.depth = 4;
 		this.chunkMetaData.textureLoader = new TextureLoader (this.chunkMetaData);
 
-		
-
 		this.playerPosition = new Vector3 (0, 0, 0);
 		this.loader = new WorldLoader (new Vector3 (0, 0, 0), this.landSize, this.cacheShiftSize, this.viewDistance);
 
-		Noise.Seed(seed);
+
+
+		if (File.Exists(this.seed.ToString())) {
+			VoxelEngine.Instance.binaryReader = new BinaryReader(File.Open(this.seed.ToString(), FileMode.Open));
+		} else {
+			Debug.LogWarning("Missing Seed database");
+			Application.Quit();
+		}
+
+
+		if (this.isCollide) {
+			this.plane.SetActive(false);
+		} else {
+			this.plane.SetActive(true);
+		}
+
 	}
 
 	void Update () {
-
-		//if (Input.GetKeyDown(KeyCode.T)) {
-		//	this.test.x += 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.Y)) {
-		//	this.test.x -= 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.U)) {
-		//	this.test.z += 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.J)) {
-		//	this.test.z -= 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.S)) {
-		//	for (int i = 0; i < 5; i++) {
-		//		for (int j = 0; j < 5; j++) {
-		//			for (int k = 0; k < 5; k++) {
-		//				Debug.Log((i * 25 + j * 5 + k).ToString() + " " + (i * 36 + j * 6 + k).ToString() + " " + ((i * 25 + j * 5 + k) - (i * 36 + j * 6 + k)).ToString());
-		//			}
-		//		}
-		//	}
-		//}
 
 		if (this.playerPosition != this.player.transform.position) {	//Player moving
 			if ((Time.realtimeSinceStartup - this.saveTime) * 1000 >= this.freqUpdate) {
@@ -91,7 +78,6 @@ public class World : MonoBehaviour {
 				this.saveTime = Time.realtimeSinceStartup;
 			}
 		}
-
 	}
 
 

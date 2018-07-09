@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,14 +39,6 @@ public class Chunk {
 
 		this.chunkNeighbors = new Chunk[6];
 		this.chunkNbMask = 0;
-
-		//this.loaded = true;
-		//this.needRender = false;
-		//this.needUpdateMesh = false;
-		//this.needUpdateTransform = false;
-		//this.isActive = false;
-
-		//this.componentReady = false;
 	}
 
 	void AddComponent() {
@@ -65,8 +58,12 @@ public class Chunk {
 		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
 		this.chunkObject.AddComponent<MeshFilter>().sharedMesh = new Mesh();
 
-		this.meshCollider = this.chunkObject.AddComponent<MeshCollider> ();
-		this.meshCollider.enabled = true;
+		if (VoxelEngine.Instance.isCollide) {
+			this.meshCollider = this.chunkObject.AddComponent<MeshCollider>();
+			this.meshCollider.enabled = true;
+		} else {
+			this.meshCollider = null;
+		}
 		
 		this.componentReady = true;
 	}
@@ -260,8 +257,10 @@ public class Chunk {
 					m.RecalculateNormals();
 					//m.RecalculateBounds();
 
-					this.meshCollider.sharedMesh = null;
-					this.meshCollider.sharedMesh = m;
+					if (this.meshCollider != null) {
+						this.meshCollider.sharedMesh = null;
+						this.meshCollider.sharedMesh = m;
+					}
 
 					this.triangles.Clear();
 					this.uv0.Clear();
@@ -350,11 +349,6 @@ public class Chunk {
 
 
 
-	public void CountVertices() {
-		
-	}
-
-
 #region Chunk access
 
 	public void SetActive(bool state) {
@@ -383,38 +377,36 @@ public class Chunk {
 
 
 	//<document>
-	//	<Params>		Not use
-	//	<Return>		Void
 	//	<Description>	Fill all blocks in chunk using Simplex Noise
 	//	<Note>			Only called from child thread, cause lagging if using from main thread
 	//</document>
-	public void Fill(bool render = true) {
-		
-		short type;
-		int offset;
-		float temp;
-		float step = 1 / (float)VoxelEngine.Instance.worldResolution;
-		Vector3 point = new Vector3(this.chunkIndexX * 16 * step, this.chunkIndexZ * 16 * step, 0);
+	public void Fill() {
 
-		for (int i = 0; i < 16; i++) {
-			point.x += step;
-			for (int j = 0; j < 16; j++) {
-				point.y += step;
-				
-				temp = Noise.Sum(point, 5f, 6, 2f, 0.5f).value + 0.6f;
-				offset = (int)(temp * 128 + 250 * 16);
-				
-				for (int k = 0; k < 16; k++) {
-					if ((k + this.chunkIndexY * 16) < offset) {
-						type = 2;
-					} else {
-						type = 0;
-					}
-					this.chunkData[k * 256 + i * 16 + j] = type;
-				}
-			}
-			point.y -= (step * 16);
-		}
+		//short type;
+		//int offset;
+		//float temp;
+		//float step = 1 / (float)VoxelEngine.Instance.worldResolution;
+		//Vector3 point = new Vector3(this.chunkIndexX * 16 * step, this.chunkIndexZ * 16 * step, 0);
+
+		//for (int i = 0; i < 16; i++) {
+		//	point.x += step;
+		//	for (int j = 0; j < 16; j++) {
+		//		point.y += step;
+
+		//		temp = Noise.Sum(point, 5f, 6, 2f, 0.5f).value + 0.6f;
+		//		offset = (int)(temp * 128 + 250 * 16);
+
+		//		for (int k = 0; k < 16; k++) {
+		//			if ((k + this.chunkIndexY * 16) < offset) {
+		//				type = 2;
+		//			} else {
+		//				type = 0;
+		//			}
+		//			this.chunkData[k * 256 + i * 16 + j] = type;
+		//		}
+		//	}
+		//	point.y -= (step * 16);
+		//}
 
 		//Debug: Flat terrain
 		//type = 0;
@@ -429,6 +421,25 @@ public class Chunk {
 		//		}
 		//	}
 		//}
+
+		short offset;
+
+		VoxelEngine.Instance.binaryReader.BaseStream.Seek((this.chunkIndexX * VoxelEngine.Instance.worldSize.z + this.chunkIndexZ) * 512, SeekOrigin.Begin);
+
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+
+				offset = VoxelEngine.Instance.binaryReader.ReadInt16();
+
+				for (int k = 0; k < 16; k++) {
+					if ((k + this.chunkIndexY * 16) < offset) {
+						this.chunkData[k * 256 + i * 16 + j] = 2;
+					} else {
+						this.chunkData[k * 256 + i * 16 + j] = 0;
+					}
+				}
+			}
+		}
 	}
 
 
