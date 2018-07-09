@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Loader\TextureLoader\TextureLoader.cs" />
     <Compile Include="Assets\Scripts\Loader\WorldLoader\IWorldAccess.cs" />
     <Compile Include="Assets\Scripts\Loader\WorldLoader\WorldLoader.cs" />
+    <Compile Include="Assets\Scripts\SimplexNoise\Generator.cs" />
     <Compile Include="Assets\Scripts\SimplexNoise\Noise.cs" />
     <Compile Include="Assets\Scripts\SimplexNoise\NoiseSample.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />

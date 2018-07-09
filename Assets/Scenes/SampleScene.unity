@@ -156,6 +156,18 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1.15
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_RunSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_WalkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_JumpSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -343,7 +355,7 @@ MonoBehaviour:
   isCollide: 1
   landSize: {x: 500, y: 500, z: 500}
   cacheShiftSize: {x: 6, y: 5, z: 6}
-  viewDistance: {x: 10, y: 10, z: 10}
+  viewDistance: {x: 10, y: 5, z: 10}
   seed: 1234
   resolution: 3000
   freqUpdate: 500

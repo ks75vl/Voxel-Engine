@@ -51,12 +51,33 @@ public class World : MonoBehaviour {
 		this.loader = new WorldLoader (new Vector3 (0, 0, 0), this.landSize, this.cacheShiftSize, this.viewDistance);
 
 
-
+		bool flag = false;
 		if (File.Exists(this.seed.ToString())) {
-			VoxelEngine.Instance.binaryReader = new BinaryReader(File.Open(this.seed.ToString(), FileMode.Open));
-		} else {
-			Debug.LogWarning("Missing Seed database");
-			Application.Quit();
+
+			BinaryReader binaryReader = new BinaryReader(File.Open(this.seed.ToString(), FileMode.Open));
+			binaryReader.BaseStream.Seek(binaryReader.BaseStream.Length - 4 * 3, SeekOrigin.Begin);
+			
+			if (binaryReader.ReadInt32() == this.landSize.x) {
+				if (binaryReader.ReadInt32() == this.landSize.z) {
+					if (binaryReader.ReadInt32() == this.seed) {
+						flag = true;
+					}
+				}
+			}
+
+			binaryReader.Close();
+
+			if (flag) {	
+				VoxelEngine.Instance.binaryReader = new BinaryReader(File.Open(this.seed.ToString(), FileMode.Open));
+			} else {
+				flag = false;
+			}
+
+		}
+		
+		if (!flag) {
+			Debug.LogError("Missing seed database");
+			//UnityEditor.EditorApplication.isPlaying = false;
 		}
 
 
