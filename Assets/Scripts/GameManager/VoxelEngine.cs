@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,9 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 
 	protected VoxelEngine() {}
 
-	public void Init( Vector3 worldPos, int resolution) {
+	public void Init( Vector3Int worldSize, int resolution, bool collider) {
 
-		this.worldPosition = worldPos;
+		this.worldSize = worldSize;
 		this.CalculateWorldOfset();
 		this.CalculatecChunkLocalPosition();
 
@@ -17,15 +18,22 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 		this.uv0 = new List<Vector2>();
 
 		this.worldResolution = resolution;
+		this.isCollide = collider;
 	}
 
-	Vector3 worldPosition;
+	public Vector3Int worldSize;
 	public Vector3[] chunkLocalPosition;
 	public Vector3Int worldOffset;
+
+
+	public int worldResolution;
+	public bool isCollide;
+
 
 	public int powChunkSize = ChunkMetaData.Instance.chunkSize * ChunkMetaData.Instance.chunkSize;
 	public int chunkOffset = (int)(ChunkMetaData.Instance.chunkSize * ChunkMetaData.Instance.blockSize);
 	public float localOffset = (ChunkMetaData.Instance.chunkSize - 1) * 0.5f;
+
 
 	public List<int[]> trianglesIndex = new List<int[]> {
 		new int[] {3, 1, 7, 5},	//1, 3, 7, 1, 7, 5
@@ -35,7 +43,6 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 		new int[] {1, 0, 5, 4},	//0, 1, 5, 0, 5, 4
 		new int[] {2, 3, 6, 7}	//3, 2, 6, 3, 6, 7
 	};
-
 	public List<int[]> trianglesIndex1 = new List<int[]> {
 		new int[] {18, 1, 307, 290},	//1, 3, 7, 1, 7, 5
 		new int[] {0, 17, 289, 306},	//2, 0, 4, 2, 4, 6
@@ -44,12 +51,11 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 		new int[] {1, 0, 290, 289},	//0, 1, 5, 0, 5, 4
 		new int[] {17, 18, 306, 307}	//3, 2, 6, 3, 6, 7
 	};
-
 	public List<Vector3> vertices;
 	public List<int> triangles;
 	public List<Vector2> uv0;
 
-	public int worldResolution;
+
 
 	void CalculatecChunkLocalPosition() {
 
@@ -84,6 +90,6 @@ public class VoxelEngine : Singleton<VoxelEngine> {
 
 	void CalculateWorldOfset() {
 
-		this.worldOffset = new Vector3Int ((int)(this.worldPosition.x * 0.5f), (int)(this.worldPosition.y * 0.5f), (int)(this.worldPosition.z * 0.5f));
+		this.worldOffset = new Vector3Int ((int)(this.worldSize.x * 0.5f), (int)(this.worldSize.y * 0.5f), (int)(this.worldSize.z * 0.5f));
 	}
 }

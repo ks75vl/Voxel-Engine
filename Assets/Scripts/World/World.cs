@@ -1,10 +1,15 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SubjectNerd.Utilities;
 
 public class World : MonoBehaviour {
 
 	public GameObject player;
+	public GameObject plane;
+
+	public bool isCollide = true;
 
 	[Header("World")]
 	public Vector3Int landSize;
@@ -18,7 +23,8 @@ public class World : MonoBehaviour {
 
 	public ChunkMetaData chunkMetaData;
 
-	
+	[Reorderable]
+	public List<Layer> layer;
 	
 
 	WorldLoader loader;
@@ -29,11 +35,15 @@ public class World : MonoBehaviour {
 
 	ChunkLoader chunkLoader;
 
+	long key;
 
 	void Awake() {
-
+		
 		ChunkMetaData.Instance = this.chunkMetaData;
-		VoxelEngine.Instance.Init(this.landSize, this.resolution);
+
+		VoxelEngine.Instance.Init(this.landSize, this.resolution, this.isCollide);
+		TerrainHandle.Instance.Init(this.landSize, this.layer);
+		TreePool.Instance.Init(this.layer);
 	}
 
 	void Start () {
@@ -43,55 +53,47 @@ public class World : MonoBehaviour {
 		this.chunkMetaData.depth = 4;
 		this.chunkMetaData.textureLoader = new TextureLoader (this.chunkMetaData);
 
-		
-
 		this.playerPosition = new Vector3 (0, 0, 0);
 		this.loader = new WorldLoader (new Vector3 (0, 0, 0), this.landSize, this.cacheShiftSize, this.viewDistance);
 
-		Noise.Seed(seed);
+
+		if (!TerrainHandle.Instance.SetTerrainData(this.seed.ToString())) {
+			Debug.LogError("Missing or invalid format terrain data of seed '" + this.seed.ToString() + "'");
+		}
+
+
+		if (this.isCollide) {
+			this.plane.SetActive(false);
+		} else {
+			this.plane.SetActive(true);
+		}
+
+
+		//Noise.Seed(5555);
 	}
 
 	void Update () {
 
-		//if (Input.GetKeyDown(KeyCode.T)) {
-		//	this.test.x += 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
+		if (Input.GetKeyDown(KeyCode.T)) {
 
-		//if (Input.GetKeyDown(KeyCode.Y)) {
-		//	this.test.x -= 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
+			this.key = TreePool.Instance.GetKey(1);
+			GameObject g = TreePool.Instance.GetTree(this.key);
+			g.SetActive(true);
+		}
 
-		//if (Input.GetKeyDown(KeyCode.U)) {
-		//	this.test.z += 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
+		if (Input.GetKeyDown(KeyCode.Y)) {
 
-		//if (Input.GetKeyDown(KeyCode.J)) {
-		//	this.test.z -= 3;
-		//	this.loader.UpdateViewDistance(this.test);
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.S)) {
-		//	for (int i = 0; i < 5; i++) {
-		//		for (int j = 0; j < 5; j++) {
-		//			for (int k = 0; k < 5; k++) {
-		//				Debug.Log((i * 25 + j * 5 + k).ToString() + " " + (i * 36 + j * 6 + k).ToString() + " " + ((i * 25 + j * 5 + k) - (i * 36 + j * 6 + k)).ToString());
-		//			}
-		//		}
-		//	}
-		//}
+			TreePool.Instance.FreeTree(this.key);
+		}
 
 		if (this.playerPosition != this.player.transform.position) {	//Player moving
 			if ((Time.realtimeSinceStartup - this.saveTime) * 1000 >= this.freqUpdate) {
+
 				this.playerPosition = this.player.transform.position;
 				this.loader.UpdateViewDistance (this.playerPosition);
-				//.Log("3Liming");
 				this.saveTime = Time.realtimeSinceStartup;
 			}
 		}
-
 	}
 
 

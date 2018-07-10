@@ -44,6 +44,7 @@ public class ChunkLoader : MonoBehaviour {
 				this.chunkRender = this.output.Dequeue();
 				this.chunkRender.ApplyMesh();
 				this.chunkRender.ApplyNeighborsMesh();
+				this.chunkRender.SpawnPrefab();
 				//Debug.Log(Time.realtimeSinceStartup - time);
 			}
 		}
@@ -129,11 +130,15 @@ public class ChunkLoader : MonoBehaviour {
 
 		this.thread.Abort();
 		this.isStopped = true;
+
+		//VoxelEngine.Instance.binaryReader.Close();
 	}
 
 	void OnApplicationQuit () {
 
 		this.thread.Abort();
 		this.isStopped = true;
+
+		//VoxelEngine.Instance.binaryReader.Close();
 	}
 }

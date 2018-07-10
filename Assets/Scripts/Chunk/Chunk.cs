@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +29,8 @@ public class Chunk {
 	bool componentReady = false;
 	bool isActive = false;
 
+	List<List<Vector3>> prefabPosition;
+	List<long> prefabKey;
 
 	public Chunk(int x, int y, int z) {
 
@@ -38,19 +41,17 @@ public class Chunk {
 
 		this.chunkNeighbors = new Chunk[6];
 		this.chunkNbMask = 0;
-
-		//this.loaded = true;
-		//this.needRender = false;
-		//this.needUpdateMesh = false;
-		//this.needUpdateTransform = false;
-		//this.isActive = false;
-
-		//this.componentReady = false;
 	}
 
 	void AddComponent() {
 
 		this.chunkData = new short[4096];
+
+		this.prefabPosition = new List<List<Vector3>>();
+		for (int i = TerrainHandle.Instance.layer.Count - 1; i >= 0; i--) {
+			this.prefabPosition.Add(new List<Vector3>());
+		}
+		this.prefabKey = new List<long>();
 
 		this.vertices = new List<Vector3> ();
 		this.triangles = new List<int> ();
@@ -65,8 +66,12 @@ public class Chunk {
 		this.chunkObject.AddComponent<MeshRenderer>().sharedMaterial = ChunkMetaData.Instance.material;
 		this.chunkObject.AddComponent<MeshFilter>().sharedMesh = new Mesh();
 
-		this.meshCollider = this.chunkObject.AddComponent<MeshCollider> ();
-		this.meshCollider.enabled = true;
+		if (VoxelEngine.Instance.isCollide) {
+			this.meshCollider = this.chunkObject.AddComponent<MeshCollider>();
+			this.meshCollider.enabled = true;
+		} else {
+			this.meshCollider = null;
+		}
 		
 		this.componentReady = true;
 	}
@@ -260,8 +265,10 @@ public class Chunk {
 					m.RecalculateNormals();
 					//m.RecalculateBounds();
 
-					this.meshCollider.sharedMesh = null;
-					this.meshCollider.sharedMesh = m;
+					if (this.meshCollider != null) {
+						this.meshCollider.sharedMesh = null;
+						this.meshCollider.sharedMesh = m;
+					}
 
 					this.triangles.Clear();
 					this.uv0.Clear();
@@ -273,7 +280,37 @@ public class Chunk {
 		this.needRender = false;
 	}
 
+	public void SpawnPrefab() {
 
+		GameObject g;
+		long key;
+		int count;
+
+
+		count = this.prefabKey.Count;
+		for (int i = 0; i < count; i++) {
+			TreePool.Instance.FreeTree(this.prefabKey[i]);
+		}
+
+		for (int i = this.prefabPosition.Count - 1; i >= 0; i--) {
+			for (int j = this.prefabPosition[i].Count - 1; j >= 0; j--) {
+
+				if (Random.Range(0, 1000) <= 1) {
+					key = TreePool.Instance.GetKey(i);
+					this.prefabKey.Add(key);
+
+					g = TreePool.Instance.GetTree(key);
+					g.transform.parent = this.chunkObject.transform;
+					g.transform.localPosition = this.prefabPosition[i][j];
+					g.SetActive(true);
+				}
+
+
+				//GameObject.Instantiate(TerrainHandle.Instance.layer[i].prefab, this.prefab[i][j], Quaternion.identity).transform.parent = this.chunkObject.transform;
+			}
+			this.prefabPosition[i].Clear();
+		}
+	}
 
 
 	public void CaculateNeighborsMesh() {
@@ -350,11 +387,6 @@ public class Chunk {
 
 
 
-	public void CountVertices() {
-		
-	}
-
-
 #region Chunk access
 
 	public void SetActive(bool state) {
@@ -383,38 +415,36 @@ public class Chunk {
 
 
 	//<document>
-	//	<Params>		Not use
-	//	<Return>		Void
 	//	<Description>	Fill all blocks in chunk using Simplex Noise
 	//	<Note>			Only called from child thread, cause lagging if using from main thread
 	//</document>
-	public void Fill(bool render = true) {
-		
-		short type;
-		int offset;
-		float temp;
-		float step = 1 / (float)VoxelEngine.Instance.worldResolution;
-		Vector3 point = new Vector3(this.chunkIndexX * 16 * step, this.chunkIndexZ * 16 * step, 0);
+	public void Fill() {
 
-		for (int i = 0; i < 16; i++) {
-			point.x += step;
-			for (int j = 0; j < 16; j++) {
-				point.y += step;
-				
-				temp = Noise.Sum(point, 5f, 6, 2f, 0.5f).value + 0.6f;
-				offset = (int)(temp * 128 + 250 * 16);
-				
-				for (int k = 0; k < 16; k++) {
-					if ((k + this.chunkIndexY * 16) < offset) {
-						type = 2;
-					} else {
-						type = 0;
-					}
-					this.chunkData[k * 256 + i * 16 + j] = type;
-				}
-			}
-			point.y -= (step * 16);
-		}
+		//short type;
+		//int offset;
+		//float temp;
+		//float step = 1 / (float)VoxelEngine.Instance.worldResolution;
+		//Vector3 point = new Vector3(this.chunkIndexX * 16 * step, this.chunkIndexZ * 16 * step, 0);
+
+		//for (int i = 0; i < 16; i++) {
+		//	point.x += step;
+		//	for (int j = 0; j < 16; j++) {
+		//		point.y += step;
+
+		//		temp = Noise.Sum(point, 3f, 6, 2f, 0.5f).value + 0.6f;
+		//		offset = (int)(temp * 128 + 250 * 16);
+
+		//		for (int k = 0; k < 16; k++) {
+		//			if ((k + this.chunkIndexY * 16) < offset) {
+		//				type = 2;
+		//			} else {
+		//				type = 0;
+		//			}
+		//			this.chunkData[k * 256 + i * 16 + j] = type;
+		//		}
+		//	}
+		//	point.y -= (step * 16);
+		//}
 
 		//Debug: Flat terrain
 		//type = 0;
@@ -429,6 +459,54 @@ public class Chunk {
 		//		}
 		//	}
 		//}
+
+		short level, ground = 0;
+		int groundIndex = 0;
+		bool air, block, flag;
+
+		TerrainHandle.Instance.binaryReader.BaseStream.Seek((this.chunkIndexX * VoxelEngine.Instance.worldSize.z + this.chunkIndexZ) * 512, SeekOrigin.Begin);
+
+
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+
+				level = TerrainHandle.Instance.binaryReader.ReadInt16();
+
+				air = false;
+				block = false;
+				flag = true;
+
+				for (int k = 0; k < 16; k++) {
+
+					if ((k + this.chunkIndexY * 16) < level) {
+						block = true;
+						this.chunkData[k * 256 + i * 16 + j] = 1;
+					} else {
+
+						if (flag) {
+							ground = level;
+							groundIndex = k;
+							flag = false;
+						}
+
+						air = true;
+						this.chunkData[k * 256 + i * 16 + j] = 0;
+					}
+				}
+
+				if (block && air) {
+					for (int l = TerrainHandle.Instance.layer.Count - 1; l >= 0; l--) {
+						if (TerrainHandle.Instance.layer[l].ContainPrefab(ground)) {
+
+							//Debug.Log(123);
+							//Convert 16*16*16 matrix to 17*17*17 matrix
+							this.prefabPosition[l].Add(VoxelEngine.Instance.chunkLocalPosition[groundIndex * 256 + i * 16 + j + 33 * groundIndex + i]);
+						}
+					}
+				}
+
+			}
+		}
 	}
 
 

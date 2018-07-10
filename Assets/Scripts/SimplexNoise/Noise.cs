@@ -38,7 +38,7 @@ public static class Noise {
 	//	222,114, 67, 29, 24, 72,243,141,128,195, 78, 66,215, 61,156,180
 	//};
 
-	private static int[] hash;
+	private static int[] hash = null;
 
 	private const int hashMask = 255;
 
@@ -50,7 +50,9 @@ public static class Noise {
 			Random.InitState(seed);
 			int hashSize = hashMask + 1;
 
-			hash = new int[hashSize * 2];
+			if (hash == null) {
+				hash = new int[hashSize * 2];
+			}
 
 			for (int i = 0; i < hashSize; i++) {
 				hash[i] = Random.Range(0, hashSize);
