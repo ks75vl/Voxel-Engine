@@ -12,4 +12,5 @@ public class InputManager : ScriptableObject
     public KeyCode StorageKeyCode;
     public KeyCode CharacterSystemKeyCode;
     public KeyCode CraftSystemKeyCode;
+    public KeyCode Interaction;
 }
