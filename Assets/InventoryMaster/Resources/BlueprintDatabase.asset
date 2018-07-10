@@ -14,6 +14,7 @@ MonoBehaviour:
   blueprints:
   - ingredients: 
     amount: 
+    condition: 00000000
     finalItem:
       itemName: 
       itemID: 0
@@ -31,6 +32,7 @@ MonoBehaviour:
     timeToCraft: 0
   - ingredients: 0e000000
     amount: 010000000000000000000000
+    condition: 01000000
     finalItem:
       itemName: Cooked Meat
       itemID: 15
@@ -52,6 +54,7 @@ MonoBehaviour:
     timeToCraft: 0
   - ingredients: 0e00000010000000
     amount: 0100000001000000
+    condition: 
     finalItem:
       itemName: Hamburger
       itemID: 17
@@ -77,6 +80,7 @@ MonoBehaviour:
     timeToCraft: 0
   - ingredients: 0c0000000d000000
     amount: 0100000001000000
+    condition: 
     finalItem:
       itemName: Applejuice
       itemID: 18

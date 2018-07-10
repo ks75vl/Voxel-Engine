@@ -370,7 +370,7 @@ public class PlayerInventory : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     thirdpersoncamera.lockCamera = true;
                 }
-
+                cS.condition = eCraftCondition.Hand;
                 craftSystemInventory.openInventory();
             }
             else

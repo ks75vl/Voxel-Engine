@@ -137,6 +137,7 @@
      <Compile Include="Assets\Scripts\Z\TestInject.cs" />
      <None Include="Assets\RPG Character Animation Pack\Elements\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\RPG Character Animation Pack\Elements\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\ChangeLog\ChangeLog v0.2.txt" />
      <None Include="Assets\RPG Character Animation Pack\Elements\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\RPG Character Animation Pack\Elements\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\RPG Character Animation Pack\Elements\ImageEffects\Shaders\SunShaftsComposite.shader" />

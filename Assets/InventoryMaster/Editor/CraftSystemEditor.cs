@@ -49,6 +49,10 @@ public class CraftSystemEditor : Editor
     {
         serializedObject.Update();
         GUILayout.BeginVertical("Box");
+        ConditionGUI();
+        GUILayout.EndVertical();
+
+        GUILayout.BeginVertical("Box");
         EditorGUI.indentLevel++;
         EditorGUI.BeginChangeCheck();
         GUILayout.BeginVertical("Box");
@@ -159,6 +163,13 @@ public class CraftSystemEditor : Editor
         GUILayout.EndVertical();
     }
 
-
+    void ConditionGUI()
+    {
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Label("Add an item:");
+        
+        cS.condition = (eCraftCondition)EditorGUILayout.EnumPopup(cS.condition, EditorStyles.popup);
+        EditorGUILayout.EndHorizontal();
+    }
 }
 

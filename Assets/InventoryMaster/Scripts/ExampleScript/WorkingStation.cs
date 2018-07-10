@@ -6,6 +6,7 @@ public class WorkingStation : MonoBehaviour
 
     public KeyCode openInventory;
     public GameObject craftSystem;
+    public eCraftCondition condition;
     public int distanceToOpenWorkingStation = 3;
     bool showCraftSystem;
     Inventory craftInventory;
@@ -33,6 +34,7 @@ public class WorkingStation : MonoBehaviour
             showCraftSystem = !showCraftSystem;
             if (showCraftSystem)
             {
+                cS.condition = this.condition;
                 craftInventory.openInventory();
             }
             else
@@ -43,6 +45,7 @@ public class WorkingStation : MonoBehaviour
         }
         if (showCraftSystem && distance > distanceToOpenWorkingStation)
         {
+            showCraftSystem = !showCraftSystem;
             cS.backToInventory();
             craftInventory.closeInventory();
         }

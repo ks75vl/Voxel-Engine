@@ -36,6 +36,8 @@ public class CraftSystem : MonoBehaviour
     public List<Item> possibleItems = new List<Item>();
     public List<bool> possibletoCreate = new List<bool>();
 
+    public eCraftCondition condition;
+
 
     //PlayerScript PlayerstatsScript;
 
@@ -163,19 +165,22 @@ public class CraftSystem : MonoBehaviour
             int amountOfTrue = 0;
             for (int z = 0; z < blueprintDatabase.blueprints[k].ingredients.Count; z++)
             {
-                for (int d = 0; d < itemInCraftSystem.Count; d++)
+                for (int j = 0; j < blueprintDatabase.blueprints[k].condition.Count; j++)
                 {
-                    if (blueprintDatabase.blueprints[k].ingredients[z] == itemInCraftSystem[d].itemID && blueprintDatabase.blueprints[k].amount[z] <= itemInCraftSystem[d].itemValue)
+                    for (int d = 0; d < itemInCraftSystem.Count; d++)
                     {
-                        amountOfTrue++;
-                        break;
+                        if (blueprintDatabase.blueprints[k].ingredients[z] == itemInCraftSystem[d].itemID && blueprintDatabase.blueprints[k].amount[z] <= itemInCraftSystem[d].itemValue && blueprintDatabase.blueprints[k].condition[j] == condition)
+                        {
+                            amountOfTrue++;
+                            break;
+                        }
                     }
-                }
-                if (amountOfTrue == blueprintDatabase.blueprints[k].ingredients.Count)
-                {
-                    possibleItems.Add(blueprintDatabase.blueprints[k].finalItem);
-                    possibleItems[possibleItems.Count - 1].itemValue = blueprintDatabase.blueprints[k].amountOfFinalItem;
-                    possibletoCreate.Add(true);
+                    if (amountOfTrue == blueprintDatabase.blueprints[k].ingredients.Count)
+                    {
+                        possibleItems.Add(blueprintDatabase.blueprints[k].finalItem);
+                        possibleItems[possibleItems.Count - 1].itemValue = blueprintDatabase.blueprints[k].amountOfFinalItem;
+                        possibletoCreate.Add(true);
+                    }
                 }
             }
         }
