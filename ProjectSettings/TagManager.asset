@@ -16,6 +16,8 @@ TagManager:
   - CraftSystem
   - Panel
   - Tooltip
+  - Mobs
+  - Equipment
   layers:
   - Default
   - TransparentFX

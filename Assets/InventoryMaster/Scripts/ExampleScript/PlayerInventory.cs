@@ -43,7 +43,9 @@ public class PlayerInventory : MonoBehaviour
     float currentMana = 100;
     float currentDamage = 0;
     float currentArmor = 0;
-    
+
+    public GameObject Weapon;
+
 
     int normalSize = 3;
 
@@ -201,9 +203,12 @@ public class PlayerInventory : MonoBehaviour
             characterSystemInventory = characterSystem.GetComponent<Inventory>();
         if (craftSystem != null)
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
+
+        if (Weapon != null)
+            Weapon = GameObject.FindGameObjectWithTag("Equipment");
     }
 
-    void UpdateHPBar()
+    public void UpdateHPBar()
     {
         hpText.text = (currentHealth + "/" + maxHealth);
         float fillAmount = currentHealth / maxHealth;
@@ -291,6 +296,20 @@ public class PlayerInventory : MonoBehaviour
             UpdateManaBar();
             UpdateHPBar();
         }
+
+        GameObject EquipmentSlot = GameObject.FindGameObjectWithTag("Equipment");
+        GameObject EquipmentItem = (GameObject)Instantiate(item.itemModel);
+        EquipmentItem.transform.SetParent(EquipmentSlot.transform);
+        EquipmentItem.transform.localPosition = Vector3.zero;
+        EquipmentItem.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        EquipmentItem.AddComponent<Rigidbody>();
+        EquipmentItem.GetComponent<Rigidbody>().useGravity = false;
+        EquipmentItem.GetComponent<Rigidbody>().isKinematic = true;
+        EquipmentItem.AddComponent<BoxCollider>();
+        EquipmentItem.GetComponent<BoxCollider>().isTrigger = true;
+        EquipmentItem.GetComponent<BoxCollider>().enabled = false;
+
+        EquipmentItem.AddComponent<Axe>();
     }
 
     public void OnUnEquipItem(Item item)
@@ -311,6 +330,9 @@ public class PlayerInventory : MonoBehaviour
             UpdateManaBar();
             UpdateHPBar();
         }
+
+        GameObject EquipmentSlot = GameObject.FindGameObjectWithTag("Equipment");
+        Destroy(EquipmentSlot.transform.GetChild(0).gameObject);
     }
 
 
@@ -400,6 +422,33 @@ public class PlayerInventory : MonoBehaviour
         }
         hungerCountTime += Time.deltaTime;
 
+
+        //Một vài Control chả liên quan gì tới Inventory
+        if (Input.GetKeyDown(inputManagerDatabase.Interaction))
+        {
+            if (Weapon.transform.childCount > 0)
+            {
+                Animator anim;
+                anim = GetComponent<Animator>();
+                anim.SetTrigger("bSwingAxe");
+            }
+        }
+    }
+
+    //Một vài Control chả liên quan gì tới Inventory
+
+   
+
+    public void StartAttack()
+    {
+        if (Weapon.transform.childCount > 0)
+            Weapon.GetComponentInChildren<IWeapon>().OnStartAttack();
+    }
+
+    public void EndAttack()
+    {
+        if (Weapon.transform.childCount > 0)
+            Weapon.GetComponentInChildren<IWeapon>().OnEndAttack();
     }
 
 }
