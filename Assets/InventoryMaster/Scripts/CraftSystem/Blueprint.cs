@@ -11,7 +11,6 @@ public enum eCraftCondition
 [System.Serializable]
 public class Blueprint
 {
-
     public List<int> ingredients = new List<int>();
     public List<int> amount = new List<int>();
     public List<eCraftCondition> condition = new List<eCraftCondition>();

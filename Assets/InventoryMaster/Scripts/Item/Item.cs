@@ -12,6 +12,7 @@ public class Item
     public GameObject itemModel;                                //itemModel of the item
     public int itemValue = 1;                                   //itemValue is at start 1
     public ItemType itemType;                                   //itemType of the Item
+    public ItemType itemType2;                                   //itemType of the Item
     public float itemWeight;                                    //itemWeight of the item
     public int maxStack = 1;
     public int indexItemInList = 999;    
@@ -21,7 +22,7 @@ public class Item
     public List<ItemAttribute> itemAttributes = new List<ItemAttribute>();    
     
     public Item(){}
-
+    // Không có hàm truyền tham số vào itemType2 để tránh gây lỗi
     public Item(string name, int id, string desc, Sprite icon, GameObject model, int maxStack, ItemType type, string sendmessagetext, List<ItemAttribute> itemAttributes)                 //function to create a instance of the Item
     {
         itemName = name;
