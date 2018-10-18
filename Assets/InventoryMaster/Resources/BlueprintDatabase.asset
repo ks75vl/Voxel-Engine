@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Name: BlueprintDatabase
   m_EditorClassIdentifier: 
   blueprints:
-  - ingredients: 
-    amount: 
+  - ingredients: 06000000
+    amount: 02000000
+    condition: 
     finalItem:
       itemName: 
-      itemID: 0
+      itemID: 41
       itemDesc: 
-      itemIcon: {fileID: 21300000, guid: 6dc5762501dd2df4da399f6c16a85907, type: 3}
-      itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
       itemValue: 0
       itemType: 0
+      itemType2: 0
       itemWeight: 0
       maxStack: 0
       indexItemInList: 0
@@ -29,70 +31,934 @@ MonoBehaviour:
       itemAttributes: []
     amountOfFinalItem: 0
     timeToCraft: 0
-  - ingredients: 0e000000
-    amount: 010000000000000000000000
+  - ingredients: 02000000
+    amount: 02000000
+    condition: 
     finalItem:
-      itemName: Cooked Meat
-      itemID: 15
-      itemDesc: 'Very nice cooked meat.
-
-        + 20 Health'
-      itemIcon: {fileID: 21300000, guid: bb168a366e12e314ca3e7cec990092fe, type: 3}
-      itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-      itemValue: 1
-      itemType: 2
+      itemName: 
+      itemID: 37
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
       itemWeight: 0
-      maxStack: 5
-      indexItemInList: 999
+      maxStack: 0
+      indexItemInList: 0
       rarity: 0
-      itemAttributes:
-      - attributeName: Health
-        attributeValue: 20
-    amountOfFinalItem: 1
+      itemAttributes: []
+    amountOfFinalItem: 0
     timeToCraft: 0
-  - ingredients: 0e00000010000000
-    amount: 0100000001000000
+  - ingredients: 290000002500000000000000
+    amount: 010000000100000001000000
+    condition: 
     finalItem:
-      itemName: Hamburger
+      itemName: 
+      itemID: 38
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 290000000600000000000000
+    amount: 010000000600000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 40
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 020000002900000000000000
+    amount: 020000000100000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 00000000
+    amount: 00000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 36
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0f000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 44
+    timeToCraft: 0
+  - ingredients: 0f000000290000002a000000
+    amount: 010000000100000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 45
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0f000000290000002a000000
+    amount: 020000000100000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 46
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 04000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 42
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0c000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 49
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 31000000
+    amount: 04000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 64
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 4000000029000000
+    amount: 0400000002000000
+    condition: 
+    finalItem:
+      itemName: Bag
+      itemID: 50
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 080000004000000029000000
+    amount: 020000000200000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 55
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 4000000029000000
+    amount: 0200000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 51
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 400000002900000006000000
+    amount: 020000000100000002000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 52
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 400000002900000006000000
+    amount: 040000000300000006000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 53
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 400000002900000006000000
+    amount: 040000000300000004000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 54
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 01000000
+    amount: 00000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 56
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 01000000
+    amount: 00000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 57
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 07000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 59
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0d000000
+    amount: 00000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 60
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0b000000
+    amount: 02000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 61
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0b000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 62
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0d0000000b00000001000000
+    amount: 010000000100000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 58
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0d0000000b00000001000000
+    amount: 010000000100000001000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 63
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0300000000000000
+    amount: 2800000014000000
+    condition: 
+    finalItem:
+      itemName: 
       itemID: 17
-      itemDesc: 'This hamburger gives you health and mana back.
-
-        + 20 Health
-
-        + 20 Mana'
-      itemIcon: {fileID: 21300000, guid: bad82843ddb69514c9b6b8e381d175f3, type: 3}
-      itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-      itemValue: 1
-      itemType: 2
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
       itemWeight: 0
-      maxStack: 5
-      indexItemInList: 999
+      maxStack: 0
+      indexItemInList: 0
       rarity: 0
-      itemAttributes:
-      - attributeName: Health
-        attributeValue: 20
-      - attributeName: Mana
-        attributeValue: 20
-    amountOfFinalItem: 2
+      itemAttributes: []
+    amountOfFinalItem: 0
     timeToCraft: 0
-  - ingredients: 0c0000000d000000
-    amount: 0100000001000000
+  - ingredients: 000000000400000006000000
+    amount: 060000000300000006000000
+    condition: 
     finalItem:
-      itemName: Applejuice
+      itemName: 
       itemID: 18
-      itemDesc: 'This applejuice gives you alot of health back.
-
-        + 50 Health'
-      itemIcon: {fileID: 21300000, guid: 6dc5762501dd2df4da399f6c16a85907, type: 3}
-      itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-      itemValue: 2
-      itemType: 2
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
       itemWeight: 0
-      maxStack: 5
-      indexItemInList: 999
+      maxStack: 0
+      indexItemInList: 0
       rarity: 0
-      itemAttributes:
-      - attributeName: Health
-        attributeValue: 50
-    amountOfFinalItem: 2
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 00000000040000000600000002000000
+    amount: 06000000030000000600000006000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 19
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 00000000
+    amount: 05000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 20
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 00000000
+    amount: 01000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 21
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0000000029000000
+    amount: 1400000005000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 22
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0000000029000000
+    amount: 0a00000002000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 23
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 040000000f000000
+    amount: 0a0000000a000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 28
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 2a00000029000000
+    amount: 0500000002000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 24
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 2a00000029000000
+    amount: 0600000005000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 26
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 2a000000
+    amount: 03000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 25
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 2a000000
+    amount: 03000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 27
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 02000000
+    amount: 1e000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 29
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0000000029000000
+    amount: 1000000008000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 31
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0000000029000000
+    amount: 1000000006000000
+    condition: 
+    finalItem:
+      itemName: Drier
+      itemID: 32
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 080000002a00000029000000
+    amount: 0a000000050000000a000000
+    condition: 
+    finalItem:
+      itemName: Bed
+      itemID: 34
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 0f0000000000000029000000
+    amount: 040000000500000002000000
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 35
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
+    timeToCraft: 0
+  - ingredients: 
+    amount: 
+    condition: 
+    finalItem:
+      itemName: 
+      itemID: 0
+      itemDesc: 
+      itemIcon: {fileID: 0}
+      itemModel: {fileID: 0}
+      itemValue: 0
+      itemType: 0
+      itemType2: 0
+      itemWeight: 0
+      maxStack: 0
+      indexItemInList: 0
+      rarity: 0
+      itemAttributes: []
+    amountOfFinalItem: 0
     timeToCraft: 0

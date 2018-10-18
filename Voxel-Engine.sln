@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel-Engine", "Assembly-CSharp.csproj", "{5C4AD794-2740-CA76-9535-7ADFE7BC8A17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{5C4AD794-2740-CA76-9535-7ADFE7BC8A17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel-Engine", "Assembly-CSharp-firstpass.csproj", "{0AE90D8F-67BB-67A3-A4A1-180044C9224E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{0AE90D8F-67BB-67A3-A4A1-180044C9224E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel-Engine", "Assembly-CSharp-Editor-firstpass.csproj", "{A1B7F904-5FC3-5075-F50F-CA958BC1C251}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{A1B7F904-5FC3-5075-F50F-CA958BC1C251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voxel-Engine", "Assembly-CSharp-Editor.csproj", "{7CC76E91-DB77-340F-47B2-C050C9125065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{7CC76E91-DB77-340F-47B2-C050C9125065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

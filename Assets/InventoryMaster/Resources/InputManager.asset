@@ -19,3 +19,4 @@ MonoBehaviour:
   StorageKeyCode: 101
   CharacterSystemKeyCode: 99
   CraftSystemKeyCode: 107
+  Interaction: 323

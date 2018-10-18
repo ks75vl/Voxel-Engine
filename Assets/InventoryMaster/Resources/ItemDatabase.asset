@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,6 +12,1166 @@ MonoBehaviour:
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
   itemList:
+  - itemName: Stick
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 3b73d56a8f1e8c6489b6bb2e18d5f255, type: 3}
+    itemModel: {fileID: 1880625444388984, guid: b9b6ad1ca14026c4a9b9d3d3cc33ec83,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Apple
+    itemID: 1
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d1c98098524d99f4193d49bf974b69d2, type: 3}
+    itemModel: {fileID: 1603277091739578, guid: 32c0881ddeda201488fb75abfbf90845,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Hunger
+      attributeValue: 10
+  - itemName: Stone
+    itemID: 2
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d3943e363b5c107468eaf33793bd5d8b, type: 3}
+    itemModel: {fileID: 1277582816377138, guid: b7e1e23c637f6624c902ed5019e5ad57,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Leaf
+    itemID: 3
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 6cf310441d8eeb64eaede6bbcb8767c8, type: 3}
+    itemModel: {fileID: 1914930658094666, guid: 8112817fb4633e946b1933e0674e2962,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Lumber
+    itemID: 4
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 032070fa2e0c33742a0c4d527802f480, type: 3}
+    itemModel: {fileID: 1869791708194694, guid: ca5402e8c74e87747a8091b32ddae4f3,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Flint
+    itemID: 5
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 5de244905d505f446a8ee5fce0db853a, type: 3}
+    itemModel: {fileID: 1681108238053692, guid: f38f4e4e7d6c17744af396d19169891f,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Grass
+    itemID: 6
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 60d325000c0d7e44a981382b37fed864, type: 3}
+    itemModel: {fileID: 1628312210344440, guid: 3c5f6f6695a24b64f9a7876a7f783bd2,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Small Meat
+    itemID: 7
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 5e61aed9776d6314fa919968e2a69ad5, type: 3}
+    itemModel: {fileID: 1438811486619802, guid: 6b907a9103d452d498b52a32ac27a032,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: -5
+    - attributeName: Hunger
+      attributeValue: 10
+  - itemName: Wool
+    itemID: 8
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d4795250de48f8f4bbb0e022b986c800, type: 3}
+    itemModel: {fileID: 1411054016217794, guid: 058fe07249d068e4f98048d949363434,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Herb
+    itemID: 9
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: bcf10ba7d55ad9b4db29d86a8fe2fbb5, type: 3}
+    itemModel: {fileID: 1959905586804170, guid: 0fcb9606f70d90049a30499095dc4c3b,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 30
+  - itemName: Low Mana Crystal
+    itemID: 10
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 7dffc9ed48e5d2747ba1869b1dad945e, type: 3}
+    itemModel: {fileID: 1929421235149436, guid: c72d0b4b465a7f247b06a2125d26c0f9,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Carrot
+    itemID: 11
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 5bec39a5262c5d040b59ae5a54c9b914, type: 3}
+    itemModel: {fileID: 1044842602360500, guid: bab2ec0f25e393042b41bcff387da1c7,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Hunger
+      attributeValue: 10
+  - itemName: Small Hide
+    itemID: 12
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: e7f14f1f9e2137e4fa5f61bfc16e90b7, type: 3}
+    itemModel: {fileID: 1884626681059672, guid: c49daddfb55be5d4fa77ebaeb9a041de,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Meat
+    itemID: 13
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: e57226da3d15d464ebdb46cb4e495460, type: 3}
+    itemModel: {fileID: 1581651740983634, guid: 735dc79611190ce49aac8b6ddec793cb,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: -10
+    - attributeName: Hunger
+      attributeValue: 25
+  - itemName: ' Iron Bar'
+    itemID: 15
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: abc014be2df00a04bb173c4279e49c71, type: 3}
+    itemModel: {fileID: 1180036478023210, guid: 4b07dbf0c2c201844b94e23b8543062b,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Sand
+    itemID: 16
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: bbd49f76f34a2e441952bbb1a55f8e77, type: 3}
+    itemModel: {fileID: 1350733418842666, guid: bc47eace8f8043f419f5867ff582e94d,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Shelter
+    itemID: 17
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d1153306c038f08428ee1545c4ef2c88, type: 3}
+    itemModel: {fileID: 1882434089870292, guid: e82a761b4d94f314cbad235743c5fac8,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: WoodBonFire
+    itemID: 18
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 31805f5e3610f9f43a47ce093058ee98, type: 3}
+    itemModel: {fileID: 1521580808687034, guid: 220ccbaaa31d4774b893abfad864c0f6,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: BonFire
+    itemID: 19
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: af8eb1540dbfee841901b98bbb39eb38, type: 3}
+    itemModel: {fileID: 1155791262007352, guid: 81c0c5a436a066d40be92b8fed95faf1,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Stick Fence
+    itemID: 20
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 464e2229be58e714d8a62437aa64330c, type: 3}
+    itemModel: {fileID: 1615660462276914, guid: cc7408d22df917342985b5f79d29e61d,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Stick Door
+    itemID: 21
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: c53b739ca71e81745bfd20094855fb73, type: 3}
+    itemModel: {fileID: 1196673271277214, guid: ae3651e35e4a32148968636967323ade,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Stick Trap
+    itemID: 22
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: f572d63236b820c4f9987b5fb40b5966, type: 3}
+    itemModel: {fileID: 1839001680785342, guid: 5aeb5002cbc47334eac91d5982a80bbc,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Stick Storage
+    itemID: 23
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 3d37d683bf3032b4d84d1857de7e61a4, type: 3}
+    itemModel: {fileID: 1320706420308862, guid: e926e7abdf4d1174c9cc6819ddaed3e1,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wooden Door
+    itemID: 24
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: cbd414dad4380a34699eb2cbfc8a6729, type: 3}
+    itemModel: {fileID: 1749830298033556, guid: d5a255f81bcd17044ad0a70a459cde93,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wooden Wall
+    itemID: 25
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: f00e3097783877f4087829556d049750, type: 3}
+    itemModel: {fileID: 1988079017355666, guid: af35596c1d1f22449a6d91acbeea9c55,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wooden Chair
+    itemID: 26
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: ab4bf065a209e9643a1ee64b30f0a7f6, type: 3}
+    itemModel: {fileID: 1041184509753756, guid: bfd59d6de8951b148b5a441b5014ed78,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wooden Table
+    itemID: 27
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 5a8f908b7d0adc8459b936921d662a27, type: 3}
+    itemModel: {fileID: 1156286682243226, guid: 508b1bc7df2a32b4fa2ff5a7f64570df,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Carpenter
+    itemID: 28
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: aefcca8aaced9a3499f99923df402f34, type: 3}
+    itemModel: {fileID: 1569564418795458, guid: 2271bce5018f409498cdc49830669dd2,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Smelt
+    itemID: 29
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 0b417d9a1e1e60140ac9d39ff8267240, type: 3}
+    itemModel: {fileID: 1071922948576980, guid: 9a02afb046bdbf448b4f2b3879a84eef,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Workbernch
+    itemID: 30
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 78907e86094d597479cd91c3dc426bf8, type: 3}
+    itemModel: {fileID: 1325063053361550, guid: 52a9ff94e1bc49c4bb6de210fc6de8b0,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Taming Rack
+    itemID: 31
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 47181d0882035eb499c4345f26e48896, type: 3}
+    itemModel: {fileID: 1707274480718684, guid: acb977b5f1d9cca4c9332da0bed8af14,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Drier
+    itemID: 32
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 8d023ca5b4d6b334a9d86f489421c858, type: 3}
+    itemModel: {fileID: 1700891189956342, guid: 9a2c9c5ab64fcbe48b3698199d0c5aee,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Farming
+    itemID: 33
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 252be40d1f82ae54b956195653dd3067, type: 3}
+    itemModel: {fileID: 1978937833740612, guid: 4fa589af07fa6df4190336d5352c385e,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Bed
+    itemID: 34
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: ac720f22c52db8c49a665fd5082f53df, type: 3}
+    itemModel: {fileID: 1448694282505078, guid: bac73c250b6673d4f97a1a606346f593,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Cooking Pot
+    itemID: 35
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 518b25b6fb7974d4d9eda54f739eabc2, type: 3}
+    itemModel: {fileID: 1135514860588048, guid: 3dbb7a792ab5d8a40a0b41556541b8cd,
+      type: 2}
+    itemValue: 1
+    itemType: 4
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Stick Spear
+    itemID: 36
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 26af4601eb7369646a263f1c6f2d86fe, type: 3}
+    itemModel: {fileID: 1807793469173090, guid: c2673a7c6bd32e246979b8c483d8462e,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 5
+  - itemName: Stone Knife
+    itemID: 37
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 6052ef5c3c345a040aea88fefe33388f, type: 3}
+    itemModel: {fileID: 1177948881755260, guid: 2736d26c26d186d419271c1d9ba1c439,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 2
+  - itemName: Stone Axe
+    itemID: 38
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 1b99af561669a5540bb3e274ebda5cdf, type: 3}
+    itemModel: {fileID: 1687249373151054, guid: 85f9a7829839659438d627a1bb8c1ce8,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 3
+  - itemName: Stone Pick Axe
+    itemID: 39
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d88b3b497175bbb4bb90e0d4301994c9, type: 3}
+    itemModel: {fileID: 1994808621860412, guid: 945032a4b4a6fa346a667a3c4df3dd80,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 3
+  - itemName: Tourch
+    itemID: 40
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 05194c081bad13a44b10a358ac1e8567, type: 3}
+    itemModel: {fileID: 1064737447344944, guid: b75f61bcaac63c7478a48fb1ae7d4d4d,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 3
+  - itemName: Rope
+    itemID: 41
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 21ef75447eacc4944bba27e84ed8660e, type: 3}
+    itemModel: {fileID: 1465408604761564, guid: e42f026faba2aea4a9aa1f7c25416e7e,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wood
+    itemID: 42
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 0dcf3c7ba896ab34d8b0b5f64ba4d6c1, type: 3}
+    itemModel: {fileID: 1672615293489666, guid: 50dea113329b87744b855d9282626cbd,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Wood Stone Spear
+    itemID: 43
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 8a7c8b23e0958fa4e8d2759fabfa8ee2, type: 3}
+    itemModel: {fileID: 1115117675566456, guid: 564f2fc5c7030e34d99b1383dc92bfa5,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 10
+  - itemName: Iron Knife
+    itemID: 44
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 7a911a867ffe10049bcbc31fd9eb9cfd, type: 3}
+    itemModel: {fileID: 1648313030657378, guid: bd6d76ce198dcbe4a895757812edc1c4,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 5
+  - itemName: Iron Axe
+    itemID: 45
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 444aa350fc438814ea21648ede80a9e7, type: 3}
+    itemModel: {fileID: 1863366691115956, guid: a210a6bb4b3278b4db1012cbd932b40f,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 8
+  - itemName: Iron Pick Axe
+    itemID: 46
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: a6572cc6420205648970f577cdeaa270, type: 3}
+    itemModel: {fileID: 1251664055554016, guid: 373ec42cc36993144a92eba001637a02,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 8
+  - itemName: Iron Spear
+    itemID: 47
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: cf6b9fd5fd5a8304aaa5bead4ec5084a, type: 3}
+    itemModel: {fileID: 1258302968433804, guid: f79a86409f32cd042a04469f4147873c,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 8
+  - itemName: Latern
+    itemID: 48
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: c3fbb911416ca78448942104e512d0f7, type: 3}
+    itemModel: {fileID: 1854559921848178, guid: 1186808a8eb60bb44b1d737fdf24578a,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Small Leather
+    itemID: 49
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: b9ff8f5ba38a2bc43af40333ff376af9, type: 3}
+    itemModel: {fileID: 1493304393640058, guid: 4af95adc8eec3294887b840ad821af0c,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Bag
+    itemID: 50
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 3e35231758dc089478948607ef9f96b5, type: 3}
+    itemModel: {fileID: 1558823108096654, guid: b1558dfbff38d094b8767dfbadd8fe52,
+      type: 2}
+    itemValue: 1
+    itemType: 6
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Slots
+      attributeValue: 10
+  - itemName: Leather Gloves
+    itemID: 51
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 828becc0774735447aed8117a8724021, type: 3}
+    itemModel: {fileID: 1784730566261448, guid: 529a8d46638873141aed16e0089d358c,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Def
+      attributeValue: 1
+  - itemName: Leather Boots
+    itemID: 52
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: e7f1e1f4f30a50b49aebb28e1c71d7d5, type: 3}
+    itemModel: {fileID: 1797840709067114, guid: bba4e6b9bf8518d4d90998d326ce92ad,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Def
+      attributeValue: 1
+  - itemName: Leather Cloth
+    itemID: 53
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: d9139e6166ecd9c449bf9b9557694fc7, type: 3}
+    itemModel: {fileID: 1948859628185894, guid: 7a48ecb4f3e845c4b8e55190104e7cd1,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Def
+      attributeValue: 3
+  - itemName: Leather Pant
+    itemID: 54
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 37d990bc54322d24993ccd837228a77b, type: 3}
+    itemModel: {fileID: 1380814236151120, guid: c44a0546c9a96104caa2e05aaed1503b,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Def
+      attributeValue: 2
+  - itemName: Warm Cloth
+    itemID: 55
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 7c2770f5bf5396947a9bf7201e06cb3e, type: 3}
+    itemModel: {fileID: 1858282321590946, guid: 53365f7c3730f714daa82e0a29217293,
+      type: 2}
+    itemValue: 1
+    itemType: 3
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Def
+      attributeValue: 1
+  - itemName: Baked Apple
+    itemID: 56
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: b5bf1eddecd1c4248bdacd3fa5ee6791, type: 3}
+    itemModel: {fileID: 1488721877243252, guid: 781e06ecdbc9d444a86039fb680e1bdd,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Hunger
+      attributeValue: 13
+  - itemName: Sliced Apple
+    itemID: 57
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 7111319e08881294c8eeacf81857cb4f, type: 3}
+    itemModel: {fileID: 1880928857722410, guid: 7505fd6c3f3f20b4a9c034528d74cbd9,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 5
+    - attributeName: Hunger
+      attributeValue: 8
+  - itemName: Combo Xieng Thit
+    itemID: 58
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 895a97fd71d655349a80b6231a5d0eb9, type: 3}
+    itemModel: {fileID: 1407173913269236, guid: 38bda61583c5c9d4b8123e34a2b495b5,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 10
+    - attributeName: Hunger
+      attributeValue: 40
+  - itemName: Baked Small Meat
+    itemID: 59
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 602140c9676ea0e4a944b8f8fc67f047, type: 3}
+    itemModel: {fileID: 1405747706753994, guid: 6fa43510a3fa0a149a1a6f242db51ad0,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Hunger
+      attributeValue: 13
+  - itemName: Baked Meat
+    itemID: 60
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: c4916a987cb0d184faad7ea6f1374cd7, type: 3}
+    itemModel: {fileID: 1264449094956800, guid: 5f3fca5a73a0c46478c87ca03a0edd6f,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Hunger
+      attributeValue: 30
+  - itemName: Soup Carrot
+    itemID: 61
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 19c2b37eeab2e0349b0ca82a48f90a96, type: 3}
+    itemModel: {fileID: 1961809787843472, guid: 37337de1790be604185c91a9f938fd0b,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 10
+    - attributeName: Hunger
+      attributeValue: 20
+  - itemName: Baked Carrot
+    itemID: 62
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 9dc7e97ddee87724183bfb3ff2d4d8e6, type: 3}
+    itemModel: {fileID: 1369004321968338, guid: 1ac861a942a214e49acdc394a4acd12d,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 5
+    - attributeName: Hunger
+      attributeValue: 12
+  - itemName: Combo 2
+    itemID: 63
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 17d59c0124cb47f4bb630d43e67018e2, type: 3}
+    itemModel: {fileID: 1413946770808568, guid: 9176693eb893a224ebbc0dff3702a256,
+      type: 2}
+    itemValue: 1
+    itemType: 1
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 20
+    - attributeName: Hunger
+      attributeValue: 40
+  - itemName: Leather
+    itemID: 64
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: 08ba580a82cf4ee4190b4280d2b9d767, type: 3}
+    itemModel: {fileID: 1559437955123510, guid: 5764c8dac6d3afc4cb70327a995c81d0,
+      type: 2}
+    itemValue: 1
+    itemType: 2
+    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
   - itemName: 
     itemID: 0
     itemDesc: 'If you drink this nice bottle you will get some health back.
@@ -22,554 +1182,73 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
+    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
-  - itemName: Leather Helmet
-    itemID: 1
-    itemDesc: 'This helmet is created out of leather.
+  - itemName: 
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
 
-      + 10 Health
-
-      + 10 Armor'
-    itemIcon: {fileID: 21300000, guid: 63dca6d4e4e873a4cb09997656d54082, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 4
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 23
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Armor
-      attributeValue: 10
-  - itemName: Iron Helmet
-    itemID: 2
-    itemDesc: 'This helmet is created out of iron.
-
-      + 20 Health
-
-      + 20 Armor'
-    itemIcon: {fileID: 21300000, guid: 52b1e3fc60614e446b61e1c6bb148f57, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 4
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 62
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Armor
-      attributeValue: 20
-  - itemName: Leather Chest
-    itemID: 3
-    itemDesc: 'This chest is created out of leather.
-
-      + 10 Health
-
-      + 10 Armor'
-    itemIcon: {fileID: 21300000, guid: fcd8bd2db18e92d42a7d14fc0e395888, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 6
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 10
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Armor
-      attributeValue: 10
-  - itemName: Iron Chest
-    itemID: 4
-    itemDesc: 'This chest is created out of iron.
-
-      + 20 Health
-
-      + 20 Armor'
-    itemIcon: {fileID: 21300000, guid: f5e3bff24c9077445a126833256147bd, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 6
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 80
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Armor
-      attributeValue: 20
-  - itemName: Bow
-    itemID: 5
-    itemDesc: 'This bow is pretty rar.
-
-      + 10 Damage'
-    itemIcon: {fileID: 21300000, guid: fe403a17b83e26d418073d2720f0e3c0, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 1
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 91
-    itemAttributes:
-    - attributeName: Damage
-      attributeValue: 10
-  - itemName: Golden Bow
-    itemID: 6
-    itemDesc: 'This bow is legendary and has a low drop rate.
-
-      + 40 Damage'
-    itemIcon: {fileID: 21300000, guid: ea8c1dc6581654b4a9e7d6257135fbe9, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 1
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 96
-    itemAttributes:
-    - attributeName: Damage
-      attributeValue: 40
-  - itemName: Leather Shoes
-    itemID: 7
-    itemDesc: 'This shoes are created out of leather.
-
-      + 10 Health
-
-      + 10 Armor'
-    itemIcon: {fileID: 21300000, guid: 3677eacbc4390644e97df27f50b96587, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 5
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Armor
-      attributeValue: 10
-  - itemName: Iron Shoes
-    itemID: 8
-    itemDesc: 'This shoes are created out of iron.
-
-      + 20 Health
-
-      + 20 Armor'
-    itemIcon: {fileID: 21300000, guid: ce2f65d4a0c353b409f2821db15cce5e, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 5
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 21
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Armor
-      attributeValue: 20
-  - itemName: Sword
-    itemID: 9
-    itemDesc: 'This sword is created out of wood.
-
-      + 10 Damage'
-    itemIcon: {fileID: 21300000, guid: 5bfa49903411b43448e6a525c69fc1fc, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 1
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 25
-    itemAttributes:
-    - attributeName: Damage
-      attributeValue: 10
-  - itemName: HP Bottle
-    itemID: 10
-    itemDesc: 'Drink it to get some health back.
-
-      + 10 Health'
-    itemIcon: {fileID: 21300000, guid: 3ac254c0fa6214047a1df59938ba786f, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 2
-    itemWeight: 0
-    maxStack: 100
-    indexItemInList: 999
-    rarity: 84
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-  - itemName: Mana Bottle
-    itemID: 11
-    itemDesc: 'This mana bottle gives you mana back.
-
-      + 10 Mana'
-    itemIcon: {fileID: 21300000, guid: f1de9e836c79fde4aab8a740ec51eb32, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 5
-    itemType: 2
-    itemWeight: 0
-    maxStack: 10
-    indexItemInList: 999
-    rarity: 12
-    itemAttributes:
-    - attributeName: Mana
-      attributeValue: 10
-  - itemName: Apple
-    itemID: 12
-    itemDesc: 'This apple could be good for applejuice.
-
-      + 10 Health'
-    itemIcon: {fileID: 21300000, guid: a4d3f378d1a88f346af15ee906321f2a, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 2
-    itemWeight: 0
-    maxStack: 5
-    indexItemInList: 999
-    rarity: 100
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Hunger
-      attributeValue: 10
-  - itemName: Empty Bottle
-    itemID: 13
-    itemDesc: You can fill some juice into the bottle.
-    itemIcon: {fileID: 21300000, guid: a9893eef89a9a0742b835e8296428609, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 2
-    itemWeight: 0
-    maxStack: 5
-    indexItemInList: 999
-    rarity: 13
-    itemAttributes: []
-  - itemName: Raw Meat
-    itemID: 14
-    itemDesc: 'You can create some nice cooked meat out of it.
-
-      + 5 Health'
-    itemIcon: {fileID: 21300000, guid: b29cbbd10ecf3fd40991d4734d556c17, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 2
-    itemWeight: 0
-    maxStack: 5
-    indexItemInList: 999
-    rarity: 35
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 5
-    - attributeName: Hunger
-      attributeValue: 15
-  - itemName: Cooked Meat
-    itemID: 15
-    itemDesc: 'Very nice cooked meat.
 
       + 20 Health'
-    itemIcon: {fileID: 21300000, guid: bb168a366e12e314ca3e7cec990092fe, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
+    itemType2: 0
     itemWeight: 0
-    maxStack: 5
+    maxStack: 0
     indexItemInList: 999
-    rarity: 72
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Hunger
-      attributeValue: 45
-  - itemName: Bread
-    itemID: 16
-    itemDesc: 'Take some meat to it and you will get a nice hamburger.
+    rarity: 0
+    itemAttributes: []
+  - itemName: 
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
 
-      + 10 Health'
-    itemIcon: {fileID: 21300000, guid: 0288dbaa9a46b7a4fa8f0b0b773b6024, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
+
+      + 20 Health'
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
+    itemType2: 0
     itemWeight: 0
-    maxStack: 5
+    maxStack: 0
     indexItemInList: 999
-    rarity: 30
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-  - itemName: Hamburger
-    itemID: 17
-    itemDesc: 'This hamburger gives you health and mana back.
+    rarity: 0
+    itemAttributes: []
+  - itemName: 
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
 
-      + 20 Health
 
-      + 20 Mana'
-    itemIcon: {fileID: 21300000, guid: bad82843ddb69514c9b6b8e381d175f3, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
+      + 20 Health'
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
+    itemType2: 0
     itemWeight: 0
-    maxStack: 5
+    maxStack: 0
     indexItemInList: 999
-    rarity: 30
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Mana
-      attributeValue: 20
-    - attributeName: Hunger
-      attributeValue: 60
-  - itemName: Applejuice
-    itemID: 18
-    itemDesc: 'This applejuice gives you alot of health back.
+    rarity: 0
+    itemAttributes: []
+  - itemName: 
+    itemID: 0
+    itemDesc: 'If you drink this nice bottle you will get some health back.
 
-      + 50 Health'
-    itemIcon: {fileID: 21300000, guid: 6dc5762501dd2df4da399f6c16a85907, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
+
+      + 20 Health'
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
+    itemType2: 0
     itemWeight: 0
-    maxStack: 5
-    indexItemInList: 999
-    rarity: 31
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 50
-  - itemName: Green Apple
-    itemID: 19
-    itemDesc: 'This is a green apple.
-
-      + 10 Health'
-    itemIcon: {fileID: 21300000, guid: 982145252540309429f63b70f4ac08d0, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 4
-    itemType: 2
-    itemWeight: 0
-    maxStack: 10
-    indexItemInList: 999
-    rarity: 60
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Hunger
-      attributeValue: 5
-  - itemName: Backpack
-    itemID: 20
-    itemDesc: 'This backpack is pretty big.
-
-      30 Slots'
-    itemIcon: {fileID: 21300000, guid: d484447c07683e045a964b5c96ef5417, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 35
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 30
-  - itemName: Backpack2
-    itemID: 21
-    itemDesc: 'This is a nice backpack.
-
-      36 Slots'
-    itemIcon: {fileID: 21300000, guid: a1fde3cbf081fbc4cbae9a28818c2a04, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 61
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 36
-  - itemName: Bullet
-    itemID: 22
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 5f0f88702fe3baa4793a297bced9d8c0, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 15
-    itemType: 17
-    itemWeight: 0
-    maxStack: 999
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes: []
-  - itemName: Pistol01
-    itemID: 23
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 435211a123255834d8dbd986692317b8, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes: []
-  - itemName: Machinegun
-    itemID: 24
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: dd0061a2f7a74a04ebeb40c4b85e2557, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes: []
-  - itemName: Machinegun Bullet
-    itemID: 25
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 9cd40a53b397dab4e8815b43f4c04be4, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 50
-    itemType: 17
-    itemWeight: 0
-    maxStack: 999
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes: []
-  - itemName: Grenade
-    itemID: 26
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 61133c9d383f3764bb714ef99ae8dc37, type: 3}
-    itemModel: {fileID: 100000, guid: 4cb7c2a50f87abf459d60c25eedc60b7, type: 2}
-    itemValue: 1
-    itemType: 15
-    itemWeight: 0
-    maxStack: 99
-    indexItemInList: 999
-    rarity: 1
-    itemAttributes: []
-  - itemName: Assault Rifle
-    itemID: 27
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: dd0061a2f7a74a04ebeb40c4b85e2557, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Shotgun
-    itemID: 28
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 7ca0a8f6c1c45884f8d3a9d234506a24, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Shotgun Shell
-    itemID: 29
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: 7f16cada731089d46a6d936d91bd8958, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 17
-    itemWeight: 0
-    maxStack: 999
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Mace
-    itemID: 30
-    itemDesc: 
-    itemIcon: {fileID: 21300000, guid: a225d3715e468b04ca832c017dfbcc0a, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Small Backpack
-    itemID: 31
-    itemDesc: 6 Slots
-    itemIcon: {fileID: 21300000, guid: a1fde3cbf081fbc4cbae9a28818c2a04, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 6
-  - itemName: Medium Backpack
-    itemID: 32
-    itemDesc: 12 Slots
-    itemIcon: {fileID: 21300000, guid: a1fde3cbf081fbc4cbae9a28818c2a04, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 12
-  - itemName: Large Backpack
-    itemID: 33
-    itemDesc: 16 Slots
-    itemIcon: {fileID: 21300000, guid: a1fde3cbf081fbc4cbae9a28818c2a04, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 16
-  - itemName: Military Backpack
-    itemID: 34
-    itemDesc: 20 Slots
-    itemIcon: {fileID: 21300000, guid: a1fde3cbf081fbc4cbae9a28818c2a04, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 13
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Slots
-      attributeValue: 24
-  - itemName: Pistol01
-    itemID: 35
-    itemDesc: THIS IS A UFPS PISTOL
-    itemIcon: {fileID: 21300000, guid: 435211a123255834d8dbd986692317b8, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 2}
-    itemValue: 1
-    itemType: 16
-    itemWeight: 0
-    maxStack: 1
+    maxStack: 0
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
