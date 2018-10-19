@@ -26,7 +26,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
     }
 
     public void OnPointerDown(PointerEventData data)
-    {
+    {       
         if (this.gameObject.transform.parent.parent.parent.GetComponent<EquipmentSystem>() == null)
         {
             bool gearable = false;
@@ -138,9 +138,8 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                     }
 
                 }
-                if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade)
+                if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade && item.itemType != ItemType.Ingredent)
                 {
-
                     Item itemFromDup = null;
                     if (duplication != null)
                         itemFromDup = duplication.GetComponent<ItemOnObject>().item;
@@ -168,6 +167,19 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                     }
 
                 }
+
+                if (item.itemType == ItemType.Constructor)
+                {
+                    Debug.Log("Clearing! UI");
+
+                    PlayerInventory pl;
+                    pl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+                    pl.CloseAllInventory();
+
+                    BuildMode bm = GameObject.FindGameObjectWithTag("Player").GetComponent<BuildMode>();
+                    bm.GetItem(item);
+                    bm.BuildModeOn();
+                }
                 
             }
             
@@ -177,6 +189,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
 
     public void consumeIt()
     {
+        
         Inventory inventory = transform.parent.parent.parent.GetComponent<Inventory>();
 
         bool gearable = false;
@@ -268,9 +281,9 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
 
 
         }
-        if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade)
+        if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade && item.itemType != ItemType.Ingredent)
         {
-
+            
             if (duplication != null)
                 itemFromDup = duplication.GetComponent<ItemOnObject>().item;
 

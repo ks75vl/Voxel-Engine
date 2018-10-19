@@ -43,6 +43,8 @@ public class PlayerInventory : MonoBehaviour
     float currentMana = 100;
     float currentDamage = 0;
     float currentArmor = 0;
+
+    public bool bBuildMode = false;
     
 
     int normalSize = 3;
@@ -318,6 +320,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
         {
             if (!characterSystem.activeSelf)
@@ -400,6 +403,23 @@ public class PlayerInventory : MonoBehaviour
         }
         hungerCountTime += Time.deltaTime;
 
+    }
+
+    public void CloseAllInventory()
+    {
+        //if (characterSystem.activeSelf)
+        //    characterSystemInventory.closeInventory();
+        if (inventory.activeSelf)
+            mainInventory.closeInventory();
+        if (craftSystem.activeSelf)
+            craftSystemInventory.closeInventory();
+
+        if (Cursor.visible)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            thirdpersoncamera.lockCamera = false;
+        }
     }
 
 }

@@ -20,7 +20,7 @@ public class LeftClick : MonoBehaviour, IPointerDownHandler
             resultScript.temp--;
         else
             resultScript.temp = craftSystem.possibleItems.Count - 1;
-
+        
 
     }
 }
