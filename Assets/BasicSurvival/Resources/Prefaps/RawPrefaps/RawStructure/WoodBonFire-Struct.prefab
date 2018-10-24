@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23842826933942564}
   - component: {fileID: 65858918126120668}
   - component: {fileID: 114762520038171740}
+  - component: {fileID: 114725838208236070}
   m_Layer: 0
   m_Name: WoodBonFire-Struct
   m_TagString: Untagged
@@ -97,6 +98,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114725838208236070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521580808687034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e2bbc4fe669384d90f90abb4f9eca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openInventory: 101
+  craftSystem: {fileID: 171414, guid: 1dfb12bfd7dc77649953ab74c5ce6c50, type: 2}
+  distanceToOpenWorkingStation: 3
 --- !u!114 &114762520038171740
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33117536871745548}
   - component: {fileID: 23842826933942564}
   - component: {fileID: 65858918126120668}
+  - component: {fileID: 114822229991599270}
   m_Layer: 0
   m_Name: WoodBonFire-Model
   m_TagString: Untagged
@@ -96,3 +97,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114822229991599270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521580808687034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e2bbc4fe669384d90f90abb4f9eca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openInventory: 101
+  craftSystem: {fileID: 1689443224482892, guid: 86e51177d6b2c904897c8ebfa32ade1d,
+    type: 2}
+  distanceToOpenWorkingStation: 3

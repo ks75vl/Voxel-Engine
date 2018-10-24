@@ -8,17 +8,23 @@ public class WorkingStation : MonoBehaviour
     public GameObject craftSystem;
     public int distanceToOpenWorkingStation = 3;
     bool showCraftSystem;
-    Inventory craftInventory;
-    CraftSystem cS;
+    public Inventory craftInventory;
+    public CraftSystem cS;
 
 
     // Use this for initialization
     void Start()
     {
+        //if (craftSystem != null)
+        //{
+        //    craftInventory = craftSystem.GetComponent<Inventory>();
+        //    cS = craftSystem.GetComponent<CraftSystem>();
+        //}
+        craftSystem = GameObject.FindGameObjectWithTag("CraftSystem");
         if (craftSystem != null)
         {
-            craftInventory = craftSystem.GetComponent<Inventory>();
             cS = craftSystem.GetComponent<CraftSystem>();
+            craftInventory = craftSystem.GetComponent<Inventory>();
         }
     }
 
@@ -33,6 +39,7 @@ public class WorkingStation : MonoBehaviour
             showCraftSystem = !showCraftSystem;
             if (showCraftSystem)
             {
+                Debug.Log("Show Craft !");
                 craftInventory.openInventory();
             }
             else
