@@ -96,7 +96,9 @@ public class BuildMode : MonoBehaviour
         if (bBuildModeOn)
         {
             Inventory inventory = GameObject.FindGameObjectWithTag("MainInventory").GetComponent<Inventory>();
-            Instantiate(item.itemModel, dubBuildingBox.transform.position, Quaternion.identity);
+            GameObject construct = Instantiate(item.itemModel, dubBuildingBox.transform.position, Quaternion.identity);
+
+            construct.AddComponent<WorkingStation>();
 
             Destroy(dubBuildingBox);
             dubBuildingBox = null;

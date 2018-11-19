@@ -17,6 +17,8 @@ TagManager:
   - Panel
   - Tooltip
   - EquipmentSystem
+  - ClimbWall
+  - Tree
   layers:
   - Default
   - TransparentFX

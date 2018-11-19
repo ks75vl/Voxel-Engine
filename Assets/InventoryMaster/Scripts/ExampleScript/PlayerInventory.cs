@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     public vThirdPersonCamera thirdpersoncamera;
     private Inventory craftSystemInventory;
     private CraftSystem cS;
-    private Inventory mainInventory;
+    public Inventory mainInventory;
     private Inventory characterSystemInventory;
     private Tooltip toolTip;
 

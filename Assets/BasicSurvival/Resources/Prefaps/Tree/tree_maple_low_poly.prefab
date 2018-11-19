@@ -68,6 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4249715655929820}
   - component: {fileID: 114578872229939370}
+  - component: {fileID: 54018315461316758}
   m_Layer: 0
   m_Name: apple
   m_TagString: Untagged
@@ -120,6 +121,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!1 &1885624801866284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4848522772009788}
+  - component: {fileID: 136700101686262378}
+  m_Layer: 0
+  m_Name: capsule_collider
+  m_TagString: Tree
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
 --- !u!1 &1991422744623988
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4805463078412166}
   - component: {fileID: 95929070147834126}
+  - component: {fileID: 54347540276868718}
+  - component: {fileID: 114885632538906786}
   m_Layer: 0
   m_Name: tree_maple_low_poly
   m_TagString: Untagged
@@ -224,15 +243,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991422744623988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.26, z: -3.31}
+  m_LocalPosition: {x: 6.489205, y: 640.5, z: -8.804889}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4928556441318896}
   - {fileID: 4800003565050048}
   - {fileID: 4249715655929820}
+  - {fileID: 4848522772009788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4848522772009788
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885624801866284}
+  m_LocalRotation: {x: -0.00541656, y: -0, z: -0, w: 0.9999854}
+  m_LocalPosition: {x: -0.087, y: -0.031, z: -0.033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4805463078412166}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -0.62100005, y: 0, z: 0}
 --- !u!4 &4928556441318896
 Transform:
   m_ObjectHideFlags: 1
@@ -289,6 +322,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053395387111710}
   m_Mesh: {fileID: 4300000, guid: ed5201cbbf119ee45b4786ac43e06ab7, type: 3}
+--- !u!54 &54018315461316758
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279490240543854}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54347540276868718
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991422744623988}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &95929070147834126
 Animator:
   serializedVersion: 3
@@ -333,6 +396,31 @@ MonoBehaviour:
     itemAttributes:
     - attributeName: Health
       attributeValue: 10
+--- !u!114 &114885632538906786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991422744623988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05534c99a273a4cb49bada6730d444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+--- !u!136 &136700101686262378
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885624801866284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!137 &137921111569347682
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

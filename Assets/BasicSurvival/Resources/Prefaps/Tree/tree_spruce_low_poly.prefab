@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4374962607844076}
   - component: {fileID: 33684099849661770}
   - component: {fileID: 23508925792559090}
-  - component: {fileID: 64819962126674274}
+  - component: {fileID: 54752711542106276}
+  - component: {fileID: 114211871758233234}
   m_Layer: 0
   m_Name: tree_spruce_low_poly
   m_TagString: Untagged
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 136263714924339958}
   m_Layer: 0
   m_Name: capsule_collider
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -82,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429109314884980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.845226, y: 642, z: -3.0546021}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4175979771143594}
@@ -97,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1434059850348948}
   m_LocalRotation: {x: -0.00541656, y: -0, z: -0, w: 0.9999854}
-  m_LocalPosition: {x: 0, y: 0.00014638901, z: 0.14708297}
+  m_LocalPosition: {x: 0, y: -0.513, z: 0.086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4374962607844076}
@@ -187,20 +188,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429109314884980}
   m_Mesh: {fileID: 4300000, guid: 17de834b88479824bae0961f8cb9dbea, type: 3}
---- !u!64 &64819962126674274
-MeshCollider:
+--- !u!54 &54752711542106276
+Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429109314884980}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 17de834b88479824bae0961f8cb9dbea, type: 3}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114211871758233234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429109314884980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05534c99a273a4cb49bada6730d444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!136 &136263714924339958
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -209,7 +223,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1434059850348948}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.25
   m_Height: 5
   m_Direction: 1

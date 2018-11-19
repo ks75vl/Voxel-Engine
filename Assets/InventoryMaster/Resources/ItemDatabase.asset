@@ -23,7 +23,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -40,7 +39,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -59,7 +57,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -76,7 +73,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -93,7 +89,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -110,7 +105,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -127,7 +121,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -144,7 +137,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -165,7 +157,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -182,7 +173,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -201,7 +191,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -218,7 +207,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -237,7 +225,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -254,7 +241,26 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
+    itemWeight: 0
+    maxStack: 999
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: -10
+    - attributeName: Hunger
+      attributeValue: 25
+  - itemName: Unused
+    itemID: 14
+    itemDesc: 'If you drink this nice bottle you will get some health back.
+
+
+      + 20 Health'
+    itemIcon: {fileID: 21300000, guid: ea2378cf8833666468fd8370d3fb6646, type: 3}
+    itemModel: {fileID: 1581651740983634, guid: 735dc79611190ce49aac8b6ddec793cb,
+      type: 2}
+    itemValue: 1
+    itemType: 1
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -275,7 +281,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -292,7 +297,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -309,7 +313,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -326,7 +329,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -343,7 +345,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -360,7 +361,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -377,7 +377,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -394,7 +393,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -411,7 +409,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -428,7 +425,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -445,7 +441,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -462,7 +457,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -479,7 +473,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -496,7 +489,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -513,7 +505,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -530,7 +521,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -547,7 +537,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -564,7 +553,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -581,7 +569,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -598,7 +585,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -615,7 +601,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 4
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -632,7 +617,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -651,7 +635,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -670,7 +653,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -689,7 +671,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -708,7 +689,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -727,7 +707,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -744,7 +723,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -761,7 +739,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -780,7 +757,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -799,7 +775,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -818,7 +793,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -837,7 +811,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -856,7 +829,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -873,7 +845,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -890,7 +861,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 6
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -909,7 +879,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -928,7 +897,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -947,7 +915,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -966,7 +933,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -985,7 +951,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 3
-    itemType2: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -1004,7 +969,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1023,7 +987,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1044,7 +1007,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1065,7 +1027,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1084,7 +1045,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1103,7 +1063,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1124,7 +1083,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1145,7 +1103,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 1
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1166,7 +1123,6 @@ MonoBehaviour:
       type: 2}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 999
     indexItemInList: 999
@@ -1182,7 +1138,6 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
@@ -1198,7 +1153,6 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
@@ -1214,7 +1168,6 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
@@ -1230,7 +1183,6 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
@@ -1246,7 +1198,6 @@ MonoBehaviour:
     itemModel: {fileID: 0}
     itemValue: 1
     itemType: 2
-    itemType2: 0
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999

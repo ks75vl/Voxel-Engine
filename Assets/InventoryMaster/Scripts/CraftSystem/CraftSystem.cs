@@ -33,6 +33,7 @@ public class CraftSystem : MonoBehaviour
     public List<Item> itemInCraftSystem = new List<Item>();
     public List<GameObject> itemInCraftSystemGameObject = new List<GameObject>();
     BlueprintDatabase blueprintDatabase;
+    ItemDataBaseList itemDatabaseList;
     public List<Item> possibleItems = new List<Item>();
     public List<bool> possibletoCreate = new List<bool>();
 
@@ -43,6 +44,7 @@ public class CraftSystem : MonoBehaviour
     void Start()
     {
         blueprintDatabase = (BlueprintDatabase)Resources.Load("BlueprintDatabase");
+        itemDatabaseList = (ItemDataBaseList)Resources.Load("ItemDatabase");
         //playerStatsScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
 
@@ -173,7 +175,8 @@ public class CraftSystem : MonoBehaviour
                 }
                 if (amountOfTrue == blueprintDatabase.blueprints[k].ingredients.Count)
                 {
-                    possibleItems.Add(blueprintDatabase.blueprints[k].finalItem);
+                    //possibleItems.Add(blueprintDatabase.blueprints[k].finalItem);
+                    possibleItems.Add(itemDatabaseList.itemList[blueprintDatabase.blueprints[k].finalItem.itemID ].getCopy());
                     possibleItems[possibleItems.Count - 1].itemValue = blueprintDatabase.blueprints[k].amountOfFinalItem;
                     possibletoCreate.Add(true);
                 }
@@ -184,16 +187,17 @@ public class CraftSystem : MonoBehaviour
 
     public void deleteItems(Item item)
     {
+        
         for (int i = 0; i < blueprintDatabase.blueprints.Count; i++)
         {
-            if (blueprintDatabase.blueprints[i].finalItem.Equals(item))
-            {
+            if (blueprintDatabase.blueprints[i].finalItem.itemID.Equals(item.itemID))
+            {               
                 for (int k = 0; k < blueprintDatabase.blueprints[i].ingredients.Count; k++)
                 {
                     for (int z = 0; z < itemInCraftSystem.Count; z++)
                     {
                         if (itemInCraftSystem[z].itemID == blueprintDatabase.blueprints[i].ingredients[k])
-                        {
+                        {                            
                             if (itemInCraftSystem[z].itemValue == blueprintDatabase.blueprints[i].amount[k])
                             {
                                 itemInCraftSystem.RemoveAt(z);

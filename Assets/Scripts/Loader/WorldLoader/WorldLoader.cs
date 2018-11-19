@@ -227,9 +227,9 @@ public class WorldLoader : IWorldAccess {
 		//Debug.Log ("3");
 		//Convert player position to chunk position
 		
-		int newChunkX = (int)(playerPosition.x - this.worldOffsetX) >> 2;
-		int newChunkY = (int)(playerPosition.y - this.worldOffsetY) >> 2;
-		int newChunkZ = (int)(playerPosition.z - this.worldOffsetZ) >> 2;
+		int newChunkX = (int)(playerPosition.x - this.worldOffsetX) >> ChunkMetaData.Instance.blockSizeDiv;
+		int newChunkY = (int)(playerPosition.y - this.worldOffsetY) >> ChunkMetaData.Instance.blockSizeDiv;
+		int newChunkZ = (int)(playerPosition.z - this.worldOffsetZ) >> ChunkMetaData.Instance.blockSizeDiv;
 
         //Debug.Log("Offset " + this.worldOffsetX.ToString());
 		//Debug.Log ("Debbug 1: " + newChunkX.ToString () + " " + newChunkY.ToString () + " " + newChunkZ.ToString ());

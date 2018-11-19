@@ -296,7 +296,7 @@ public class Chunk {
 			for (int j = this.prefabPosition[i].Count - 1; j >= 0; j--) {
 
                 //*if (Random.Range(0, 1000) <= 1) {
-                if (Random.Range(0, 10000) <= 1) {
+                if (Random.Range(0, 1000) <= 1) {
 					key = TreePool.Instance.GetKey(i);
 					this.prefabKey.Add(key);
 

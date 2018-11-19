@@ -51,7 +51,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                     cS.deleteItems(item);
                     CraftResultSlot result = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().craftSystem.transform.GetChild(3).GetComponent<CraftResultSlot>();
                     result.temp = 0;
-                    tooltip.deactivateTooltip();
+                    //tooltip.deactivateTooltip();
                     gearable = true;
                     GameObject.FindGameObjectWithTag("MainInventory").GetComponent<Inventory>().updateItemList();
                 }

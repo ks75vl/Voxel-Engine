@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BasicSurvival\Script\BuildingComponent\BuildMode.cs" />
+     <Compile Include="Assets\BasicSurvival\Script\ChoppingTree.cs" />
+     <Compile Include="Assets\BasicSurvival\Script\ClimbWall.cs" />
+     <Compile Include="Assets\BasicSurvival\Script\PickUpItemMovement.cs" />
+     <Compile Include="Assets\BasicSurvival\Script\TextParticle.cs" />
+     <Compile Include="Assets\BasicSurvival\Script\Tree.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Camera\vThirdPersonCamera.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonAnimator.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonController.cs" />
